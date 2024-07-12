@@ -5,6 +5,8 @@ import FindAiData from "./pages/FindAiData";
 import FindModelData from "./pages/FindModelData";
 import UploadAiData from "./pages/UploadAiData";
 import UploadModelData from "./pages/UploadModelData";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const Router = () => {
   return (
@@ -15,6 +17,8 @@ const Router = () => {
         <Route path="/uploadAiData" element={<UploadAiData />} />         {/* AI올리기 페이지 */}
         <Route path="/findModelData" element={<FindModelData />} />       {/* Model찾기 페이지 */}
         <Route path="/uploadModelData" element={<UploadModelData />} />   {/* Model올리기 페이지 */}
+        <Route path="/login" element={<Login />} />                       {/* Login 페이지 */}
+        <Route path="/signup" element={<Signup />} />                     {/* 회원가입 페이지 */}
       </Routes>
     </div>
   );
