@@ -1,9 +1,10 @@
 import React from "react";
+import OrangeLine from "../components/OrangeLine";
 
 const UploadModelData = () => {
   return (
     <div>
-      <h1>Upload Model Data</h1>
+      <OrangeLine text="모델 올리기"/>
     </div>
   );
 };

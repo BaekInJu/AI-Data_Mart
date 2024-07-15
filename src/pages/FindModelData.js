@@ -1,9 +1,10 @@
 import React from "react";
+import OrangeLine from "../components/OrangeLine";
 
 const FindModelData = () => {
   return (
     <div>
-      <h1>Find Model Data</h1>
+      <OrangeLine text="모델 찾기"/>
     </div>
   );
 };

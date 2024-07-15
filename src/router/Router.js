@@ -1,12 +1,12 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Ai from "./pages/Ai";
-import FindAiData from "./pages/FindAiData";
-import FindModelData from "./pages/FindModelData";
-import UploadAiData from "./pages/UploadAiData";
-import UploadModelData from "./pages/UploadModelData";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Ai from "../pages/Ai";
+import FindAiData from "../pages/FindAiData";
+import FindModelData from "../pages/FindModelData";
+import UploadAiData from "../pages/UploadAiData";
+import UploadModelData from "../pages/UploadModelData";
+import Login from "../pages/Login";
+import Signup from "../pages/Signup";
 
 const Router = () => {
   return (

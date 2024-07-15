@@ -1,0 +1,21 @@
+.option input[type="checkbox"] {
+    display: none;
+}
+
+.checkbox-lines {
+    align-items: center;
+}
+
+.new-checkbox::before {
+    content: '';
+    display: block;
+    margin-right: 5px;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    border: 1px solid #9da3a5;
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+}
