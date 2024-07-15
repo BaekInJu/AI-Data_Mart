@@ -90,3 +90,23 @@
   text-decoration: none;
   color: #333;
 }
+
+.navigation-bottom-hr {
+  background: rgb(248, 163, 92);
+  height: 1px;
+  border: 0;
+  margin: 0px;
+}
+
+.orange-line {
+  display: block;
+  height: 60px;
+  background: rgb(253, 234, 218);
+}
+
+.orange-bottom-hr {
+  margin: 0px;
+  background: rgb(197, 197, 197);
+  height: 1px;
+  border: 0;
+}

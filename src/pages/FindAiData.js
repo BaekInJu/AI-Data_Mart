@@ -1,10 +1,13 @@
 import React from "react";
+import OrangeLine from "../components/OrangeLine";
 
 const FindAiData = () => {
   return (
-    <div>
-      <h1>Find Ai Data</h1>
-    </div>
+    <>
+      <div className="find-data-body">
+        <OrangeLine text="데이터 찾기"/>
+      </div>
+    </>
   );
 };
 

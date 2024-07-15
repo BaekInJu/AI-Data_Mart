@@ -4,6 +4,7 @@ import logo from "../assets/image/logo.png"
 
 const Navigation = () => {
     return(
+        <>
         <div className="navigation">
             <div className="navi-inner-wrapper">
                 <div className="logo">
@@ -22,6 +23,8 @@ const Navigation = () => {
                 </div>
             </div>
         </div>
+        <hr className="navigation-bottom-hr"/>
+        </>
     )
 }
 
