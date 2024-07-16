@@ -62,7 +62,7 @@
 .menu {
   display: flex;
   justify-content: center;
-  flex-grow: 1;
+  flex-grow: 2;
 }
 
 .menu a {
@@ -101,7 +101,7 @@
 
 .orange-line {
   display: block;
-  height: 60px;
+  height: 50px;
   background: rgb(253, 234, 218);
   position: relative;
 }
@@ -126,13 +126,14 @@
 }
 
 .all-select-button {
-  display: inline-block;
+  /* display: inline-block; */
   background: rgb(245, 123, 18);
-  border-radius: 40%;
-  padding: 5px;
+  border-radius: 15px;
+  padding: 2px;
   margin-top: 10px;
   margin-right: 10px;
   float: right;
+  /* float: right; */
 }
 
 .all-select-button button {
@@ -150,17 +151,22 @@
 }
 
 .selection-form {
+  display: inline-block;
   width: 320px;
   height: 400px;
   border: solid;
   border-width: 1px;
-  border-color: rgb(197, 197, 197);
+  border-color: rgba(197, 197, 197, 0.5);
+  /* border-right: 0; */
 }
 
+#date-selection-form {
+  border-left: 0;
+}
 
 .selection-title {
   background-color: rgb(78, 78, 78);
-  height: 50px;
+  height: 48px;
 }
 
 .selection-form p {
@@ -174,20 +180,118 @@
 
 .selection-form p {
   float: left;
+
 }
 
 .checkbox-lines {
-  float: left;
+  display: block;
 }
 
 .checkbox-lines .line {
-  float: left;
+  display: block;
+  /* float: left; */
   font-size: 20px;
   margin: 4px;
   color: rgb(110, 110, 110);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.checkbox-lines .line:hover {
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+input[type="checkbox"]:checked+label+span {
+  color: red;
+  text-decoration: underline;
+  background-color: red;
+}
+
+.checkbox-lines .line:visited {
+  color: rgb(245, 123, 18);
+  background-color: rgb(245, 123, 18);
+}
+
 .options {
-  position: block;
+  display: block;
+}
+
+.option-year {
+  display: inline;
+  float: left;
+  /* width: 158px; */
+  /* height: 348px; */
+  flex-grow: 1;
+}
+
+.option-month {
+  display: inline;
+  float: right;
+  /* width: 158px; */
+  height: 348px;
+  width: 50%;
+  /* height: auto; */
+  border: solid;
+  border-width: 1px;
+  border-color: rgba(197, 197, 197, 0.5);
+  overflow: auto;
+  border-bottom: 0;
+}
+
+/* .option-month .checkbox-lines {
+  width: 90px;
+}
+
+.option-year .checkbox-lines {
+  width: 100px
+} */
+
+.checkbox {
+  margin-right: 8px;
+}
+
+.selection-form-tiny {
+  display: inline-block;
+  width: 220px;
+  height: 197px;
+  overflow: auto;
+  border: solid;
+  border-width: 1px;
+  border-color: rgba(197, 197, 197, 0.4);
+  border-left: 0;
+}
+
+.selection-form-tiny p {
+  /* float: left; */
+  color: white;
+  font-weight: bolder;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 10px;
+  font-size: 20px;
+  margin: 0;
+}
+
+.tiny-list .checkbox-lines {
+  width: 180px;
+}
+
+.tiny-list .line {
+  display: block;
+}
+
+.line {
+  display: block;
+}
+
+.option-right {
+  display: grid;
+}
+
+.margin-box {
+  display: inline-flex;
+  margin: 20px;
+}
+
+.line {
+  text-align: left;
 }
