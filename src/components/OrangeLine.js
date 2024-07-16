@@ -7,7 +7,7 @@ const OrangeLine = (props) => {
         <>
             <div className="orange-line">
                 <div className="orange-line-text">
-                    <h3>{props.text}</h3>
+                    <p>{props.text}</p>
                 </div>
             </div>
             <hr className="orange-bottom-hr"/>
