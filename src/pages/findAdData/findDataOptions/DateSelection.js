@@ -1,6 +1,6 @@
 import React from "react";
-import AllSelectButton from "../../components/AllSelectButton";
-import Option from "../../components/Option";
+import AllSelectButton from "../../../components/AllSelectButton";
+import Option from "../../../components/Option";
 
 const DateSelection = (props) => {
     const year = [
@@ -28,7 +28,7 @@ const DateSelection = (props) => {
         <div className="selection-form" id="date-selection-form">
             <div className="selection-title">
                 <p>생성날짜별 보기</p>
-                <AllSelectButton />
+                <AllSelectButton for="date"/>
             </div>
             <div className="option-list">
                 <span className="option-year">

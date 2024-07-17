@@ -1,24 +1,24 @@
 import React from "react";
-import Option from "../../components/Option";
+import Option from "../../../components/Option";
 
-const ResloutionSelection = (props) => {
-    const resolution = [
+const BrightSelection = (props) => {
+    const bright = [
         "None",
-        "2M",
-        "4M"
+        "Bright",
+        "Dark"
       ];
     return(
         <div className="selection-form-tiny">
             <div className="selection-title">
-                <p>해상도별 보기</p>
+                <p>밝기별 보기</p>
             </div>
             <div className="option-list">
                 <div className="tiny-list">
-                    <Option list={resolution} handler={props.func} for="resolution"/>
+                    <Option list={bright} handler={props.func} for="bright"/>
                 </div>
             </div>
         </div>
     )
 }
 
-export default ResloutionSelection;
+export default BrightSelection;

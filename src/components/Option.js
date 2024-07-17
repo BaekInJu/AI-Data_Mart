@@ -8,15 +8,25 @@ const Option = (props) => {    //props => list = 옵션 목록, handler = 선택
 
     return(
         <>
-            <div className="checkbox-lines">
-                {props.list.map((item, index) => (
-                        <div className="line" key={index} >
-                            <input className="checkbox" type="checkbox" id={`${props.for} : ${item}`} name="option" value={`"type": "${props.for}", "value": "${item}"`} onChange={onChange}/>  
-                            <span id={item} name="new-checkbox" />
-                            <label htmlFor={`${props.for} : ${item}`}>{item}</label>
-                        </div>
-                    ))}
-            </div>
+        <div className="checkbox-lines">
+            {props.list.map((item, index) => (
+                <div className="line" key={index} >
+                    <input 
+                        className="checkbox" 
+                        type="checkbox" 
+                        id={`${props.for} : ${item}`} 
+                        name="option" 
+                        value={`"type": "${props.for}", "value": "${item}"`} 
+                        onClick={onChange}
+                        />  
+                    
+                    <label htmlFor={`${props.for} : ${item}`}>
+                        <span id={item} name="new-checkbox" />
+                        {item}
+                    </label>
+                </div>
+                ))}
+        </div>
         </>
     )
 }

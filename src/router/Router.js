@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Ai from "../pages/Ai";
-import FindAiData from "../pages/FindAiData";
+import FindAiData from "../pages/findAdData/FindAiData";
 import FindModelData from "../pages/FindModelData";
 import UploadAiData from "../pages/UploadAiData";
 import UploadModelData from "../pages/UploadModelData";

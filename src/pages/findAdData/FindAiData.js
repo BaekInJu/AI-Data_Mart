@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import OrangeLine from "../components/OrangeLine";
+import "../../style/FindAiData.css";
+import OrangeLine from "../../components/OrangeLine";
 import SiteSelection from "./findDataOptions/SiteSeletion";
 import DateSelection from "./findDataOptions/DateSelection";
 import ObjectSelection from "./findDataOptions/ObjectSelection";
@@ -7,37 +8,32 @@ import AttributeSelection from "./findDataOptions/AttributeSelection";
 import WeatherSeletion from "./findDataOptions/WeatherSeletion";
 import BrightSelection from "./findDataOptions/BrightSeletion";
 import SeasonSelection from "./findDataOptions/SeasonSelection";
-import ResloutionSelection from "./findDataOptions/Resoluntion";
+import ResolutionSelection from "./findDataOptions/Resoluntion";
+import FindDataSearch from "./findDataShow/FindDataSearch";
+import FindDataSet from "./findDataShow/FindDataSet";
 
 const FindAiData = () => {
-  //체크된 속성 배열
+  //체크된 속성 배열(JSON)
   const [clicked, setClicked] = useState([]);
   
   //체크 항목 배열에 추가 함수
   const handlerOption = (click) => {
     setClicked((prevClicked) => {
       let newClicked = [...prevClicked];
-      let test = Object.entries(newClicked);
       for(let i=0; i<newClicked.length; i++){
-        console.log("굴러온" + click);
-        console.log("박힌" + newClicked);
-        if(test[i] === click){
-          return;
+        if(JSON.stringify(newClicked[i]) === JSON.stringify(click)){
+          newClicked = newClicked.filter(item => JSON.stringify(item) !== JSON.stringify(click));
+          return newClicked;
         }
-        
       }
-      if (newClicked.includes(click)) {
-        newClicked = newClicked.filter(item => item !== click);
-      } else {
-        newClicked.push(click);
-      }
-      console.log("Updated array:", newClicked);
+      newClicked.push(click);
+      console.log("Updated array:", newClicked);   //테스트 출력
       return newClicked;
     });
   }
 
   return (
-    <>
+
       <div className="find-data-body">
         <OrangeLine  className="orange-line" text="데이터 찾기"/>
           <div className="options">
@@ -53,13 +49,22 @@ const FindAiData = () => {
                 <span className="option-right-bottom">
                   <BrightSelection func={handlerOption}/>
                   <SeasonSelection func={handlerOption}/>
-                  <ResloutionSelection func={handlerOption}/>
+                  <ResolutionSelection func={handlerOption}/>
                 </span>
               </span>
             </div>
           </div>
+          <div className="find-data-show">
+            <div className="find-data-search">
+              <FindDataSearch />
+              <hr />
+            </div>
+            <div className="data-set-list">
+              <FindDataSet />
+            </div>
+          </div>
       </div>
-    </>
+
   );
 };
 
