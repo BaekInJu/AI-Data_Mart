@@ -19,3 +19,50 @@
     position: relative;
     cursor: pointer;
 }
+
+.checkbox-lines {
+    display: block;
+}
+
+.checkbox-lines .line {
+    display: block;
+    font-size: 20px;
+    margin: 4px;
+    color: rgb(110, 110, 110);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.checkbox-lines .line:hover {
+    text-decoration: underline;
+}
+
+.checkbox {
+    display: none;
+}
+
+.checkbox+label::before {
+    content: "";
+    display: inline-block;
+    width: 13px;
+    height: 13px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin-right: 8px;
+    background-color: white;
+}
+
+.checkbox:checked+label::before {
+    background-image: url("../assets/image/check.png");
+    background-size: 7px 7px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.checkbox:checked+label {
+    color: rgb(245, 126, 24);
+    text-decoration: underline;
+}
+
+.checkbox {
+    margin-right: 8px;
+}

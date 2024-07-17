@@ -1,25 +1,24 @@
 import React from "react";
-import Option from "../../components/Option";
+import Option from "../../../components/Option";
 
-const WeatherSeletion = (props) => {
-    const weather = [
+const ResolutionSelection = (props) => {
+    const resolution = [
         "None",
-        "Clear",
-        "Rain",
-        "Snow"
+        "2M",
+        "4M"
       ];
     return(
         <div className="selection-form-tiny">
             <div className="selection-title">
-                <p>속성별 보기</p>
+                <p>해상도별 보기</p>
             </div>
             <div className="option-list">
                 <div className="tiny-list">
-                    <Option list={weather} handler={props.func} for="weather"/>
+                    <Option list={resolution} handler={props.func} for="resolution"/>
                 </div>
             </div>
         </div>
     )
 }
 
-export default WeatherSeletion;
+export default ResolutionSelection;

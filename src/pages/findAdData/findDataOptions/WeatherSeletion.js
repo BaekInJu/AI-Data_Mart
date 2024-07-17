@@ -1,24 +1,25 @@
 import React from "react";
-import Option from "../../components/Option";
+import Option from "../../../components/Option";
 
-const AttributeSelection = (props) => {
-    const attribute = [
+const WeatherSeletion = (props) => {
+    const weather = [
         "None",
-        "Indoor",
-        "Outdoor"
+        "Clear",
+        "Rain",
+        "Snow"
       ];
     return(
         <div className="selection-form-tiny">
             <div className="selection-title">
-                <p>속성별 보기</p>
+                <p>날씨별 보기</p>
             </div>
             <div className="option-list">
                 <div className="tiny-list">
-                    <Option list={attribute} handler={props.func} for="attribute"/>
+                    <Option list={weather} handler={props.func} for="weather"/>
                 </div>
             </div>
         </div>
     )
 }
 
-export default AttributeSelection;
+export default WeatherSeletion;

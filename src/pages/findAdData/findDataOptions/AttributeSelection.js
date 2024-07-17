@@ -1,25 +1,24 @@
 import React from "react";
-import Option from "../../components/Option";
+import Option from "../../../components/Option";
 
-const SeasonSelection = (props) => {
-    const season = [
+const AttributeSelection = (props) => {
+    const attribute = [
         "None",
-        "Spring",
-        "Summer",
-        "Fall"
+        "Indoor",
+        "Outdoor"
       ];
     return(
         <div className="selection-form-tiny">
             <div className="selection-title">
-                <p>계절별 보기</p>
+                <p>속성별 보기</p>
             </div>
             <div className="option-list">
                 <div className="tiny-list">
-                    <Option list={season} handler={props.func} for="season"/>
+                    <Option list={attribute} handler={props.func} for="attribute"/>
                 </div>
             </div>
         </div>
     )
 }
 
-export default SeasonSelection;
+export default AttributeSelection;

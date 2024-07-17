@@ -17,11 +17,12 @@ const Navigation = () => {
                     <Link to="/findModelData"><p>AI 모델 찾기</p></Link>
                     <Link to="/uploadModelData"><p>AI 모델 올리기</p></Link> 
                 </div>
-                <div className="registration">
+                
+            </div>
+            <div className="registration">
                     <Link to="/login">로그인</Link>
                     <Link to="/signup">회원가입</Link>
                 </div>
-            </div>
         </div>
         <hr className="navigation-bottom-hr"/>
         </>
