@@ -125,22 +125,29 @@
     border: solid;
     border-width: 1px;
     border-color: rgba(197, 197, 197, 0.5);
+    height: 34px;
+    padding-bottom: 3px;
 }
 
 .find-data-input-form input {
+    position: relative;
+    bottom: 4px;
+    display: inline;
     padding: 0;
     border: none;
-    height: 34px;
+    height: 27px;
     width: 95%;
     font-size: 23px;
     color: rgb(110, 110, 110);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-
+.find-data-input-form form {
+    display: inline;
 }
 
 .find-data-input-form input::placeholder {
-    font-size: 23px;
+    font-size: 20px;
     color: rgba(110, 110, 110, 0.3);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -150,11 +157,13 @@
 }
 
 .find-data-input-form img {
-    height: 34px;
+    position: relative;
+    left: 13px;
+    height: 30px;
 }
 
 .find-data-input-form button {
-    margin-top: 5px;
+    margin-top: 3px;
     height: 30px;
     display: inline;
     padding: 0;
@@ -162,7 +171,9 @@
     background: none;
 }
 
+
 .find-data-search hr {
     border-width: 1px;
     border-color: rgba(197, 197, 197, 0.2);
+    margin: 0px;
 }

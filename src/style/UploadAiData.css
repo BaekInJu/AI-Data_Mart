@@ -1,0 +1,127 @@
+.body-top p {
+    display: inline;
+    color: white;
+    font-size: 20px;
+}
+
+.wrap-p {
+    position: relative;
+    left: 0px;
+    display: inline-block;
+    background-color: rgb(78, 78, 78);
+    padding: 2px 38px 3px 38px;
+    border-radius: 7px;
+    /* margin-bottom: 25px; */
+    border: none;
+    margin-right: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+.set-project {
+    display: inline-block;
+    width: 700px;
+    margin-right: 30px;
+}
+
+.set-date {
+    display: inline-block;
+    width: 600px;
+}
+
+.set-project .upload-data-set-form {
+    position: relative;
+    top: 7px;
+    /* margin: 7px; */
+    display: inline-block;
+    background-color: white;
+    /* padding: 3px; */
+    width: 70%;
+    border-radius: 30px;
+    border: solid;
+    border-width: 1px;
+    border-color: rgba(197, 197, 197, 0.5);
+    height: 34px;
+    padding-bottom: 3px;
+}
+
+.set-date .upload-data-set-form {
+    position: relative;
+    top: 7px;
+    /* margin: 7px; */
+    display: inline-block;
+    background-color: white;
+    /* padding: 3px; */
+    width: 70%;
+    border-radius: 30px;
+    border: solid;
+    border-width: 1px;
+    border-color: rgba(197, 197, 197, 0.5);
+    height: 34px;
+    padding-bottom: 3px;
+}
+
+
+.set-project .upload-data-set-form input {
+    position: relative;
+    bottom: 4px;
+    display: inline-block;
+    padding: 0;
+    border: none;
+    height: 27px;
+    margin-bottom: 5px;
+    width: 430px;
+    font-size: 23px;
+    color: rgb(110, 110, 110);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.set-date .upload-data-set-form input {
+    position: relative;
+    bottom: 4px;
+    display: inline-block;
+    padding: 0;
+    border: none;
+    height: 27px;
+    width: 350px;
+    font-size: 23px;
+    color: rgb(110, 110, 110);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.upload-data-set-form form {
+    display: inline-block;
+}
+
+.upload-data-set-form input::placeholder {
+    font-size: 20px;
+    color: rgba(110, 110, 110, 0.3);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.upload-data-set-form input:focus {
+    outline: none;
+}
+
+.upload-data-set-form img {
+    position: relative;
+    left: 11px;
+    top: 1px;
+    height: 30px;
+}
+
+.set-date .upload-data-set-form img {
+    position: relative;
+    left: 16px;
+    top: 1px;
+    height: 30px;
+}
+
+.upload-data-set-form button {
+    margin-top: 3px;
+    height: 30px;
+    display: inline;
+    padding: 0;
+    border: none;
+    background: none;
+}

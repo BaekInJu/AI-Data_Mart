@@ -56,11 +56,13 @@
     background-size: 7px 7px;
     background-position: center;
     background-repeat: no-repeat;
+    transition: background-image 0.2s;
 }
 
 .checkbox:checked+label {
     color: rgb(245, 126, 24);
     text-decoration: underline;
+    transition: color 0.1s;
 }
 
 .checkbox {

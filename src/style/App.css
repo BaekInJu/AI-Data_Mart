@@ -5,6 +5,7 @@
 
 .contents {
   margin-top: 10px;
+  margin-bottom: 50px;
   width: 1400px;
   display: inline-block;
   border: solid;
@@ -84,6 +85,7 @@
 
 .menu a:hover {
   color: rgb(245, 130, 30);
+  transition: color 0.2s;
 }
 
 .menu p {
@@ -123,7 +125,7 @@
   position: absolute;
   font-weight: 700;
   top: 25%;
-  left: 2%;
+  left: 3%;
   font-size: 21px;
   /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   font-family: Arial, Helvetica, sans-serif;
@@ -136,5 +138,3 @@
   height: 1px;
   border: 0;
 }
-
-.body {}
