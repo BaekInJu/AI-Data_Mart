@@ -1,0 +1,151 @@
+.find-data-set {
+    padding: 10px;
+}
+
+.number-data {
+    padding-top: 0px;
+}
+
+.number-data p {
+    margin-left: 20px;
+    margin-bottom: 0px;
+    margin-top: 0;
+    display: flex;
+    font-weight: 700;
+    font-size: 21px;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ai-data {
+    display: inline-block;
+    text-align: center;
+    width: 300px;
+    height: 350px;
+    border: solid;
+    border-width: 1px;
+    border-color: rgba(197, 197, 197, 0.7);
+    margin: 10px;
+    background-color: white;
+}
+
+.ai-data {
+    border: 2px solid transparent;
+    /* 초기 상태에서 투명한 테두리 */
+    transition:
+        border-color 0.3s;
+    /* 테두리 색상 변환 시 부드러운 애니메이션 */
+}
+
+.ai-data:hover {
+    border: solid;
+    border-width: 2px;
+    border-color: rgb(245, 130, 30);
+}
+
+.ai-data:hover .ai-data-title p {
+    text-decoration: underline;
+}
+
+.find-data-list {
+    height: 550px;
+    margin: 25px;
+    margin-top: 5px;
+    /* text-align: left */
+    overflow: auto;
+}
+
+.aidata-download-button {
+    display: inline-block;
+    position: relative;
+    left: 94px;
+    top: 5px;
+
+}
+
+.aidata-download-button img {
+    margin: 0;
+    margin-right: 8px;
+    display: inline-block;
+    height: 15px;
+}
+
+.aidata-download-button p {
+    margin: 0;
+    display: inline-block;
+    color: white;
+    font-size: 15px;
+}
+
+
+.aidata-download-button button {
+    border: solid;
+    border-width: 1px;
+    border-color: rgba(197, 197, 197, 0.7);
+    background-color: rgb(248, 101, 80);
+    border-radius: 20px;
+    width: 100px;
+    height: 30px;
+}
+
+.aidata-download-button button:hover {
+    background-color: rgb(248, 163, 92);
+    transition: background-color 0.3s;
+}
+
+.ai-data-title {
+    display: block;
+    margin-top: 20px;
+}
+
+.ai-data-title p {
+    font-size: 25px;
+    color: rgb(245, 130, 30);
+    font-weight: 400;
+}
+
+.ai-data hr {
+    margin: 15px;
+    border-width: 1px;
+    border-color: rgba(197, 197, 197, 0.3);
+}
+
+.ai-data-info {
+    display: inline;
+    /* margin: 20px; */
+    width: 250px;
+    /* text-align: left; */
+    font-size: 15px;
+    margin: 4px;
+    color: rgb(110, 110, 110);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background-color: aquamarine; */
+}
+
+.ai-data-info {
+    text-align: left;
+    padding: 30px;
+}
+
+.ai-data-info p {
+    position: relative;
+    left: 20px;
+    display: inline;
+}
+
+.ai-data-tag {
+    margin: 40px;
+    width: 250px;
+    display: inline-block;
+    padding: 20px;
+    margin-top: 20px;
+    font-size: 15px;
+    margin: 4px;
+    color: rgb(110, 110, 110);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background-color: aqua; */
+}
+
+.ai-data-teg p {
+    display: inline;
+}

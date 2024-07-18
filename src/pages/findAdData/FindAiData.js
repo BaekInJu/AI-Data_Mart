@@ -60,7 +60,7 @@ const FindAiData = () => {
               <hr />
             </div>
             <div className="data-set-list">
-              <FindDataSet />
+              <FindDataSet num={23}/>
             </div>
           </div>
       </div>
