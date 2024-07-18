@@ -8,7 +8,7 @@ const AiData = (props) => {
     return(
         <div className="ai-data">
             <div className="aidata-download-button">
-                <button onClick={hi}><img src={DownloadIcon} /><p>다운로드</p></button>
+                <button onClick={hi}><img src={DownloadIcon} alt="NoImage"/><p>다운로드</p></button>
             </div>
             <div className="ai-data-title">
                 <p>MOD / BRIGADE / #001 </p>

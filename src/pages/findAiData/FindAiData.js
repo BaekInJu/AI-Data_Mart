@@ -33,38 +33,36 @@ const FindAiData = () => {
   }
 
   return (
-
-      <div className="find-data-body">
-        <OrangeLine  className="orange-line" text="데이터 찾기"/>
-          <div className="options">
-            <div className="margin-box">
-              <SiteSelection func={handlerOption}/>
-              <DateSelection func={handlerOption}/>
-              <span className="option-right">
-                <span className="option-right-top">
-                  <ObjectSelection func={handlerOption}/>
-                  <AttributeSelection func={handlerOption}/>
-                  <WeatherSeletion func={handlerOption}/>
-                </span>
-                <span className="option-right-bottom">
-                  <BrightSelection func={handlerOption}/>
-                  <SeasonSelection func={handlerOption}/>
-                  <ResolutionSelection func={handlerOption}/>
-                </span>
+    <div className="find-data-body">
+      <OrangeLine  className="orange-line" text="데이터 찾기"/>
+        <div className="options">
+          <div className="margin-box">
+            <SiteSelection func={handlerOption}/>
+            <DateSelection func={handlerOption}/>
+            <span className="option-right">
+              <span className="option-right-top">
+                <ObjectSelection func={handlerOption}/>
+                <AttributeSelection func={handlerOption}/>
+                <WeatherSeletion func={handlerOption}/>
               </span>
-            </div>
+              <span className="option-right-bottom">
+                <BrightSelection func={handlerOption}/>
+                <SeasonSelection func={handlerOption}/>
+                <ResolutionSelection func={handlerOption}/>
+              </span>
+            </span>
           </div>
-          <div className="find-data-show">
-            <div className="find-data-search">
-              <FindDataSearch />
-              <hr />
-            </div>
-            <div className="data-set-list">
-              <FindDataSet num={23}/>
-            </div>
+        </div>
+        <div className="find-data-show">
+          <div className="find-data-search">
+            <FindDataSearch />
+            <hr />
           </div>
-      </div>
-
+          <div className="data-set-list">
+            <FindDataSet num={23}/>
+          </div>
+        </div>
+    </div>
   );
 };
 

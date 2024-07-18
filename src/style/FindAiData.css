@@ -130,6 +130,8 @@
 }
 
 .find-data-input-form input {
+    position: relative;
+    bottom: 4px;
     display: inline;
     padding: 0;
     border: none;
@@ -155,6 +157,8 @@
 }
 
 .find-data-input-form img {
+    position: relative;
+    left: 13px;
     height: 30px;
 }
 
