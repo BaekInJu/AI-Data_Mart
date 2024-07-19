@@ -1,0 +1,57 @@
+.fix img {
+    height: 30px;
+}
+
+.upload-data-body .options {
+    display: flex;
+    flex-direction: column;
+}
+
+.set-upload-category .set-title {
+    background-color: rgb(78, 78, 78);
+    height: 48px;
+}
+
+.set-upload-category .title {
+    margin-left: 5px;
+    float: left;
+}
+
+.set-upload-category .fix {
+    float: right;
+    margin: 10px;
+}
+
+.set-upload-category {
+    margin: 10px;
+    display: inline-block;
+    width: 250px;
+    height: 200px;
+    border: solid;
+    border-width: 1px;
+    border-color: rgba(197, 197, 197, 0.5);
+    overflow: auto;
+}
+
+.set-upload-category p {
+    color: white;
+    font-weight: bolder;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    padding: 10px;
+    margin: 0;
+}
+
+.set-upload-category .set-bright-title span {
+    display: inline-block;
+}
+
+.set-upload-category .set-bright-title .fix {
+    /* margin-top: 15px; */
+    vertical-align: middle;
+
+}
+
+.upload-data-body .body-middle {
+    display: block;
+}
