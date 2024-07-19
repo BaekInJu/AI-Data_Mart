@@ -1,10 +1,42 @@
 import React from "react";
 import OrangeLine from "../../components/OrangeLine";
-import "../../style/UploadAiData.css"
-import SetAiProject from "./SetAiProject";
+import "../../style/UploadAiData.css";
+import "../../style/SettingUpload.css";
+import SetAiProject from "./settingUpload/SetAiProject";
 import search from "../../assets/image/search.png"
 import calender from "../../assets/image/calender.png"
+import SetAiDate from "./settingUpload/SetAiDate";
+import SetAiCategory from "./settingUpload/SetAiCategory";
+import guide from "../../assets/image/guide.png";
+
 const UploadAiData = () => {
+  const attribute = [
+    "None",
+    "Indoor",
+    "Outdoor"
+  ];
+  const bright = [
+    "None",
+    "Bright",
+    "Dark"
+  ];
+  const resolution = [
+    "None",
+    "2M",
+    "4M"
+  ];
+  const season = [
+    "None",
+    "Spring",
+    "Summer",
+    "Fall"
+  ];
+  const weather = [
+    "None",
+    "Clear",
+    "Rain",
+    "Snow"
+  ];
   return (
     <div className="upload-data-body">
       <OrangeLine text="데이터 올리기"/>
@@ -18,13 +50,22 @@ const UploadAiData = () => {
               <SetAiProject img={search}/>
             </sapn>
             <span className="set-date">
-              <sapn className="wrap-p">
+              <span className="wrap-p">
                 <p>생성일</p>
-              </sapn>
-              <SetAiProject img={calender}/>
+              </span>
+              <SetAiDate img={calender}/>
             </span>
           </div>
         </div>
+        <div className="body-middle">
+          <SetAiCategory title="위치" list={attribute}/>
+          <SetAiCategory title="날씨"list={weather}/>
+          <SetAiCategory title="밝기" list={bright}/>
+          <SetAiCategory title="계절" list={season}/>
+          <SetAiCategory title="해상도" list={resolution}/>   
+          <hr />
+        </div>
+        <img id="guide" src={guide} alt="NoImage" />
       </div>
     </div>
   );
