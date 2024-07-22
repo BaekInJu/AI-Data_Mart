@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
+import Calendar from "react-calendar";
+import CalendarModal from "../../../components/CalendarModal";
 
 const SetAiDate = (props) => {
-    return(
+    const [date, setDate] = useState();
+    const [isModalOpened, setIsModalOpened] = useState(false);
+    const opepModal = () => {
+        setIsModalOpened(true);
+    }    
+ return(
         <div className="upload-data-set-form">
-            <form method="post">
-                <input
-                type="text" />
-                <button><img src={props.img} alt="NoImage" /></button>
-            </form>
+            <input
+            type="text"
+            value={date} 
+            disabled/>
+            <button onClick={opepModal}><img src={props.img} alt="NoImage" /></button>
+            <CalendarModal isModalOpened={isModalOpened} setIsModalOpened={setIsModalOpened} setDate={setDate}/>
         </div>
     )
 }

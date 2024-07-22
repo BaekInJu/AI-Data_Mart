@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import OrangeLine from "../../components/OrangeLine";
 import "../../style/UploadAiData.css";
 import "../../style/SettingUpload.css";
 import SetAiProject from "./settingUpload/SetAiProject";
 import search from "../../assets/image/search.png"
-import calender from "../../assets/image/calender.png"
+import calendar from "../../assets/image/calendar.png"
 import SetAiDate from "./settingUpload/SetAiDate";
 import SetAiCategory from "./settingUpload/SetAiCategory";
 import guide from "../../assets/image/guide.png";
+import CalendarModal from "../../components/CalendarModal";
 
 const UploadAiData = () => {
   const attribute = [
@@ -53,7 +54,7 @@ const UploadAiData = () => {
               <span className="wrap-p">
                 <p>생성일</p>
               </span>
-              <SetAiDate img={calender}/>
+              <SetAiDate img={calendar}/>
             </span>
           </div>
         </div>

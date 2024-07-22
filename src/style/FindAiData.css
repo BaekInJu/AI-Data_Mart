@@ -83,6 +83,7 @@
     height: 48px;
 }
 
+
 .selection-form p {
     color: white;
     font-weight: bolder;
@@ -144,7 +145,7 @@
 
 .find-data-input-form input {
     position: relative;
-    bottm: 4px;
+    bottom: 4px;
     display: inline;
     padding: 0;
     border: none;
@@ -182,7 +183,6 @@
     border: none;
     background: none;
 }
-
 
 .find-data-search hr {
     border-width: 1px;
