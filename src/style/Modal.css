@@ -1,0 +1,147 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contents {
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+    border: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.7);
+    width: 1000px;
+    height: 1000px;
+}
+
+.modal-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top-left {
+    display: block;
+    margin: 10px;
+}
+
+.top-left>p {
+    margin: 0px;
+    color: rgb(245, 130, 30);
+    font-size: 30px;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: sans-serif;
+    margin-bottom: 20px;
+}
+
+.top-left .created-date {
+    padding: 4px 12px 4px 12px;
+    margin-right: 10px;
+    display: inline-block;
+    border: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: rgba(0, 0, 0, 0.3);
+    font-size: 17px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 600;
+
+}
+
+.top-left>.detail-info>p {
+    display: inline-block;
+    margin: 0;
+    font-size: 170px;
+    color: red;
+    font-family: inherit;
+}
+
+.top-left .number-data {
+    padding: 4px 12px 4px 12px;
+    margin: 0px 15px 0px 50px;
+    display: inline-block;
+    border: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: rgba(0, 0, 0, 0.3);
+    font-size: 17px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    color: rgba(0, 0, 0, 0.9);
+    font-weight: 600;
+}
+
+.top-left>.detail-info>p {
+    display: inline-block;
+    margin: 0;
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.9);
+    font-family: inherit;
+}
+
+.top-right {
+    display: block;
+}
+
+.top-right button {
+    margin: 0px;
+    padding: 5px 20px 5px 20px;
+    font-size: 17px;
+    border-radius: 8px;
+    background-color: white;
+    border-width: 1px;
+}
+
+.top-right #close {
+    display: block;
+    float: right;
+    margin-bottom: 30px;
+}
+
+.top-right #close button:hover {
+    background-color: rgb(127, 127, 127);
+    color: white;
+    transition: color 0.3s, background 0.3s;
+}
+
+.top-right #download button:hover {
+    background-color: rgb(124, 17, 0);
+    color: white;
+    transition: color 0.3s, background 0.3s;
+}
+
+.top-right #download button {
+    background-color: rgb(248, 101, 80);
+    color: white;
+    border: none;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+.modal-contents hr {
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.img-list {
+    /* background-color: aqua; */
+    /* width: 300px; */
+    height: 850px;
+    overflow: auto;
+}
+
+.img-list img {
+    margin: 10px;
+    display: inline-block;
+    width: 300px;
+}

@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import DownloadIcon from "../../../assets/image/download-icon.png"
+import AiDataModal from "./AiDataModal";
+
 
 const AiData = (props) => {
-    const hi = () => {
-        console.log("hi");
+
+    const [isModalOpened, setIsModalOpened] = useState(false);
+
+    const openModal = (handler) => {
+        setIsModalOpened(true)
     }
     return(
-        <div className="ai-data">
+        <div className="ai-data" >
             <div className="aidata-download-button">
-                <button onClick={hi}><img src={DownloadIcon} alt="NoImage"/><p>다운로드</p></button>
+                <button onClick={openModal}><img src={DownloadIcon} alt="NoImage"/><p>다운로드</p></button>
             </div>
             <div className="ai-data-title">
                 <p>MOD / BRIGADE / #001 </p>
@@ -22,6 +27,7 @@ const AiData = (props) => {
             <div className="ai-data-tag">
                 <p>#사람 #로봇 #지그 #배경 #한잔 #좋은 #친구 #바다</p>
             </div>
+            <AiDataModal isModalOpened={isModalOpened} setIsModalOpened={setIsModalOpened} />
         </div>
     )
 }
