@@ -8,7 +8,7 @@ import calendar from "../../assets/image/calendar.png"
 import SetAiDate from "./settingUpload/SetAiDate";
 import SetAiCategory from "./settingUpload/SetAiCategory";
 import guide from "../../assets/image/guide.png";
-import CalendarModal from "../../components/CalendarModal";
+
 
 const UploadAiData = () => {
   const attribute = [
@@ -64,8 +64,21 @@ const UploadAiData = () => {
           <SetAiCategory title="밝기" list={bright}/>
           <SetAiCategory title="계절" list={season}/>
           <SetAiCategory title="해상도" list={resolution}/>   
+          {/* <SetAiCategory title="객체" list={resolution} /> */}
           <hr />
         </div>
+      </div>
+      <div className="upload-file">
+        <input type="file"/>
+      </div>
+      <div className="uploading-bar">
+        <p id="progress-state">진행률</p>
+        <div className="frame">
+          <div id="color-bar">
+            {/* <p id="percent">78%</p> */}
+          </div>
+        </div>
+        <button id="upload-button">업로드</button>
         <img id="guide" src={guide} alt="NoImage" />
       </div>
     </div>
