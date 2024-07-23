@@ -12,8 +12,7 @@ const SetAiDate = (props) => {
         <div className="upload-data-set-form">
             <input
             type="text"
-            value={date} 
-            disabled/>
+            value={date} />
             <button onClick={opepModal}><img src={props.img} alt="NoImage" /></button>
             <CalendarModal isModalOpened={isModalOpened} setIsModalOpened={setIsModalOpened} setDate={setDate}/>
         </div>
