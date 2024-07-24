@@ -1,22 +1,26 @@
 import React from "react";
-import fix from"../../../assets/image/fix.png";
 import Option from "../../../components/Option";
+import fix from"../../../assets/image/fix.png";
 
-const SetAiCategory = (props) => {
-    
+const SetResolution = (props) => {
+    const resolution = [
+        "None",
+        "2M",
+        "4M"
+      ];
     return(
         <div className="set-upload-category">
             <div className="set-title">
                 <span className="title">
-                    <p>{props.title}</p>
+                    <p>해상도</p>
                 </span>
                 <span className="fix">
                     <img src={fix} alt="NoImage"/>
                 </span>
             </div>
-            <Option list={props.list}/>
+            <Option list={resolution} handler={props.func} for="resolution"/>
         </div>
     )
 }
 
-export default SetAiCategory;
+export default SetResolution;

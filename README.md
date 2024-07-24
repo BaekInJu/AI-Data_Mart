@@ -73,3 +73,4 @@ used library
     - react-router
     - react-modal
     - react-calendar
+    - styled-components
