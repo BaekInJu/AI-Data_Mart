@@ -16,7 +16,7 @@ const CalendarModal = (props) => {
     return(
         <>
         <Modal
-            className="modal-contents"
+            className="calender-modal-contents"
             overlayClassName="modal-overlay"
             isOpen={props.isModalOpened}
             onRequestClose={()=>props.setIsModalOpened(false)}

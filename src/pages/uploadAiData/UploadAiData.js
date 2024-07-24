@@ -6,38 +6,35 @@ import SetAiProject from "./settingUpload/SetAiProject";
 import search from "../../assets/image/search.png"
 import calendar from "../../assets/image/calendar.png"
 import SetAiDate from "./settingUpload/SetAiDate";
-import SetAiCategory from "./settingUpload/SetAiCategory";
+
 import guide from "../../assets/image/guide.png";
+import UploadAiFile from "./UploadAiFile";
+import SetAttribute from "./settingUpload/SetAttribute";
+import SetSeason from "./settingUpload/SetSeason";
+import SetWeather from "./settingUpload/SetWeather";
+import SetBright from "./settingUpload/SetBright";
+import SetResolution from "./settingUpload/SetResolution";
 
 
 const UploadAiData = () => {
-  const attribute = [
-    "None",
-    "Indoor",
-    "Outdoor"
-  ];
-  const bright = [
-    "None",
-    "Bright",
-    "Dark"
-  ];
-  const resolution = [
-    "None",
-    "2M",
-    "4M"
-  ];
-  const season = [
-    "None",
-    "Spring",
-    "Summer",
-    "Fall"
-  ];
-  const weather = [
-    "None",
-    "Clear",
-    "Rain",
-    "Snow"
-  ];
+  const [clicked, setClicked] = useState([]);
+  //체크 항목 배열에 추가 함수
+  const handlerOption = (click) => {
+    setClicked((prevClicked) => {
+      let newClicked = [...prevClicked];
+      for(let i=0; i<newClicked.length; i++){
+        if(JSON.stringify(newClicked[i]) === JSON.stringify(click)){
+          newClicked = newClicked.filter(item => JSON.stringify(item) !== JSON.stringify(click));
+          return newClicked;
+        }
+      }
+      newClicked.push(click);
+      console.log("Updated array:", newClicked);   //테스트 출력
+      return newClicked;
+    });
+  }
+  
+  const [percent,setPercent] = useState(45);
   return (
     <div className="upload-data-body">
       <OrangeLine text="데이터 올리기"/>
@@ -59,24 +56,31 @@ const UploadAiData = () => {
           </div>
         </div>
         <div className="body-middle">
-          <SetAiCategory title="위치" list={attribute}/>
-          <SetAiCategory title="날씨"list={weather}/>
-          <SetAiCategory title="밝기" list={bright}/>
-          <SetAiCategory title="계절" list={season}/>
-          <SetAiCategory title="해상도" list={resolution}/>   
-          {/* <SetAiCategory title="객체" list={resolution} /> */}
+          <SetAttribute func={handlerOption}/>
+          <SetWeather func={handlerOption} />
+          <SetBright func={handlerOption}/>
+          <SetSeason func={handlerOption}/>
+          <SetResolution func={handlerOption}/> 
+          {/* <SetResolution func={handlerOption}/> */}
           <hr />
         </div>
       </div>
       <div className="upload-file">
-        <input type="file"/>
+        <UploadAiFile />
       </div>
       <div className="uploading-bar">
         <p id="progress-state">진행률</p>
         <div className="frame">
-          <div id="color-bar">
-            {/* <p id="percent">78%</p> */}
+          <div id="color-bar" style={{
+            height: 30,
+            borderRadius: 20,
+            width: `${percent}%`, 
+            display: "flex",
+            justifyContent: "left",
+            background: "rgb(245, 123, 18)",
+          }}>
           </div>
+          <p id="percent">{percent}%</p>
         </div>
         <button id="upload-button">업로드</button>
         <img id="guide" src={guide} alt="NoImage" />
