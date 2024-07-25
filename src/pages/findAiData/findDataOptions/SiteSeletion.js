@@ -30,7 +30,7 @@ const SiteSelection = (props) => {
         <div className="selection-form">
             <div className="selection-title">
                 <p>사이트별 보기</p>
-                <AllSelectButton for="site" func={allSelection}/>
+                <AllSelectButton for="site" id="site" func={allSelection}/>
             </div>
             <Option list={siteList} handler={props.func} for="site"/>
         </div>

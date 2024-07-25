@@ -13,7 +13,6 @@ const AiDataModal = (props) => {
             overlayClassName="modal-overlay"
             isOpen={props.isModalOpened}
             onRequestClose={()=>props.setIsModalOpened(false)}
-            contentLabel="hi i'm modal"
             shouldCloseOnOverlayClick
         >
             <div className="modal-container">

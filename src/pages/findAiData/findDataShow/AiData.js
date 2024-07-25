@@ -25,7 +25,7 @@ const AiData = (props) => {
                 <div className="data-number"><p>ㆍ데이터개수: 5,105개</p></div>
             </div>
             <div className="ai-data-tag">
-                <p>#사람 #로봇 #지그 #배경 #한잔 #좋은 #친구 #바다</p>
+                <p>#사람 #로봇 #지그 #배경 #여름 #흐림 </p>
             </div>
             <AiDataModal isModalOpened={isModalOpened} setIsModalOpened={setIsModalOpened} />
         </div>
