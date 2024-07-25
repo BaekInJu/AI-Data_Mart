@@ -1,0 +1,133 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-contents-project {
+    position: relative;
+    bottom: 130px;
+    background: white;
+    padding: 20px;
+    border-radius: 4px;
+    border: solid;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.7);
+    width: 1100px;
+    height: 500px;
+}
+
+
+.set-project-modal>#title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.set-project-modal>#title>p {
+    margin: 5px;
+    font-size: 25px;
+    display: inline-block;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(245, 130, 30);
+}
+
+.set-project-modal #title button {
+    margin: 0px;
+    padding: 5px 20px 5px 20px;
+    font-size: 17px;
+    color: rgba(0, 0, 0, 0.8);
+    border-radius: 8px;
+    background-color: white;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+}
+
+.set-project-modal #title button:hover {
+    background-color: rgb(127, 127, 127);
+    color: white;
+    transition: color 0.3s, background 0.3s;
+}
+
+#discription {
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 20px;
+    font-size: 22px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+}
+
+.set-project-modal hr {
+    margin-top: 20px;
+}
+
+.set-project-modal-options {
+    display: flex;
+    justify-content: center;
+}
+
+.inp-sub-project {
+    margin: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.inp-sub-project>span {
+    border: solid;
+    border-width: 1px;
+    background-color: rgb(78, 78, 78);
+    color: white;
+    font-size: 20px;
+    padding: 5px 15px 5px 15px;
+    border-radius: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 600;
+}
+
+.inp-sub-project>input {
+    border-radius: 20px;
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.3);
+    width: 80%;
+    font-size: 20px;
+}
+
+.submit {
+    display: flex;
+    margin: 20px;
+    justify-content: end;
+}
+
+.submit button {
+    font-size: 18px;
+    color: white;
+    background-color: rgb(248, 101, 80);
+    border: none;
+    padding: 10px 40px 10px 40px;
+    border-radius: 10px;
+}
+
+.submit button:hover {
+    background-color: rgb(124, 17, 0);
+    transition: background 0.3s;
+}
+
+.upload-data-body .checkbox-lines {
+    overflow: auto;
+    height: 140px;
+    width: 250px;
+}
+
+.set-project-modal .checkbox-lines {
+    overflow: auto;
+    height: 140px;
+    width: 250px;
+}

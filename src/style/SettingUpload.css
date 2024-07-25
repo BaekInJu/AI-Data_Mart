@@ -30,7 +30,6 @@
     border: solid;
     border-width: 1px;
     border-color: rgba(197, 197, 197, 0.5);
-    overflow: auto;
 }
 
 .set-upload-category p {

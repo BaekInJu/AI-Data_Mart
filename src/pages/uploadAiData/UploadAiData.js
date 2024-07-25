@@ -33,20 +33,33 @@ const UploadAiData = () => {
       return newClicked;
     });
   }
+
+  const projectHandler = (click) => {
+    setClicked((prevClicked) => {
+      let newClicked = [...prevClicked];
+      for(let i=0; i<newClicked.length; i++){
+        if(JSON.stringify(newClicked[i].type) === JSON.stringify(click.type)){
+          newClicked = newClicked.filter(item => JSON.stringify(item) !== JSON.stringify(click));
+          return newClicked;
+        }
+      }
+    })
+  }
   
   const [percent,setPercent] = useState(45);
+
   return (
     <div className="upload-data-body">
       <OrangeLine text="데이터 올리기"/>
       <div className="options">
         <div className="margin-box">
           <div className="body-top">
-            <sapn className="set-project">
+            <span className="set-project">
               <span className="wrap-p">
                 <p>프로젝트</p>
               </span>
-              <SetAiProject img={search}/>
-            </sapn>
+              <SetAiProject img={search} func={handlerOption} />
+            </span>
             <span className="set-date">
               <span className="wrap-p">
                 <p>생성일</p>
