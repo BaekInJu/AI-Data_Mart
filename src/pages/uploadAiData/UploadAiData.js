@@ -34,18 +34,6 @@ const UploadAiData = () => {
     });
   }
 
-  const projectHandler = (click) => {
-    setClicked((prevClicked) => {
-      let newClicked = [...prevClicked];
-      for(let i=0; i<newClicked.length; i++){
-        if(JSON.stringify(newClicked[i].type) === JSON.stringify(click.type)){
-          newClicked = newClicked.filter(item => JSON.stringify(item) !== JSON.stringify(click));
-          return newClicked;
-        }
-      }
-    })
-  }
-  
   const [percent,setPercent] = useState(45);
 
   return (
@@ -74,7 +62,6 @@ const UploadAiData = () => {
           <SetBright func={handlerOption}/>
           <SetSeason func={handlerOption}/>
           <SetResolution func={handlerOption}/> 
-          {/* <SetResolution func={handlerOption}/> */}
           <hr />
         </div>
       </div>

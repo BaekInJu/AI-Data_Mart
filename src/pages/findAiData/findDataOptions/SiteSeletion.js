@@ -15,22 +15,25 @@ const SiteSelection = (props) => {
         "MOD / VRIGADE / #002"
       ];
 
-      //All select 버튼 handler
-      const allSelection = () => {
+      const handler = () => {
         let test = document.getElementById("site : HDS / AJIN / 지게차");
         let test1 = document.getElementById("site");
         if(test1.checked === true){
             test.checked = true;
+            props.func(test);
         }else{
             test.checked = false;
         }
-      }
-
+    }
+    const onChange = (event) => {
+        props.handler(JSON.parse(`{${event.target.value}}`));    //json형식으로 넘어감
+    }
+    
     return(
         <div className="selection-form">
             <div className="selection-title">
                 <p>사이트별 보기</p>
-                <AllSelectButton for="site" id="site" func={allSelection}/>
+                <AllSelectButton for="site" id="site" list={siteList} handler={handler}/>
             </div>
             <Option list={siteList} handler={props.func} for="site"/>
         </div>

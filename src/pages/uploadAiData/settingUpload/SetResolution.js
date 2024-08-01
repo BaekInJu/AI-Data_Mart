@@ -1,6 +1,6 @@
 import React from "react";
-import Option from "../../../components/Option";
 import fix from"../../../assets/image/fix.png";
+import OptionRadio from "../../../components/OptionRadio";
 
 const SetResolution = (props) => {
     const resolution = [
@@ -18,7 +18,7 @@ const SetResolution = (props) => {
                     <img src={fix} alt="NoImage"/>
                 </span>
             </div>
-            <Option list={resolution} handler={props.func} for="resolution"/>
+            <OptionRadio list={resolution} handler={props.func} for="resolution"/>
         </div>
     )
 }

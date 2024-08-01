@@ -25,9 +25,12 @@
 }
 
 .checkbox-lines .line {
-    display: block;
+    /* display: block; */
+    display: flex;
+    justify-content: space-between;
     font-size: 20px;
-    margin: 4px;
+    /* margin: 4px; */
+    padding: 0px 10px 0px 10px;
     color: rgb(110, 110, 110);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -68,3 +71,14 @@
 .checkbox {
     margin-right: 8px;
 }
+
+.checkbox-lines img {
+    position: relative;
+    top: 8px;
+    height: 10px;
+}
+
+/* .checkbox-lines .line:hover {
+    background-color: peachpuff;
+    transition: background 0.2s;
+} */

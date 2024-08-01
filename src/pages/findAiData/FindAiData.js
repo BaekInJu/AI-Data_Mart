@@ -67,3 +67,4 @@ const FindAiData = () => {
 };
 
 export default FindAiData;
+

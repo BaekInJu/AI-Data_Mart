@@ -1,6 +1,6 @@
 import React from "react";
-import Option from "../../../components/Option";
 import fix from"../../../assets/image/fix.png";
+import OptionRadio from "../../../components/OptionRadio";
 
 const SetBright = (props) => {
     const bright = [
@@ -18,7 +18,7 @@ const SetBright = (props) => {
                     <img src={fix} alt="NoImage"/>
                 </span>
             </div>
-            <Option list={bright} handler={props.func} for="bright"/>
+            <OptionRadio list={bright} handler={props.func} for="bright"/>
         </div>
     )
 }

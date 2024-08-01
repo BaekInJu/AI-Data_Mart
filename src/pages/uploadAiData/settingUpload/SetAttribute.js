@@ -1,5 +1,6 @@
 import React from "react";
 import Option from "../../../components/Option";
+import OptionRadio from "../../../components/OptionRadio";
 import fix from"../../../assets/image/fix.png";
 
 const SetAttribute = (props) => {
@@ -18,7 +19,8 @@ const SetAttribute = (props) => {
                     <img src={fix} alt="NoImage"/>
                 </span>
             </div>
-            <Option list={attribute} handler={props.func} for="attribute"/>
+            {/* <Option list={attribute} handler={props.func} for="attribute"/> */}
+            <OptionRadio list={attribute} handler={props.func} for="attribute"/>
         </div>
     )
 }
