@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
+import Delete from "../assets/image/delete.png"
 
 const OptionRadio = (props) => {
     const onChange = (event) => {
         props.handler(JSON.parse(`{${event.target.value}}`));    //json형식으로 넘어감
     }
-    
+
     return(
         <>
         <div className="checkbox-lines">
@@ -23,6 +24,7 @@ const OptionRadio = (props) => {
                         <span id={item} name="new-checkbox" />
                         {item}
                     </label>
+                    {/* <img src={Delete}/> */}
                 </div>
                 ))}
         </div>

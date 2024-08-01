@@ -1,6 +1,6 @@
 import React from "react";
-import Option from "../../../components/Option";
 import fix from"../../../assets/image/fix.png";
+import OptionRadio from "../../../components/OptionRadio";
 
 const SetSeason = (props) => {
     const season = [
@@ -19,7 +19,7 @@ const SetSeason = (props) => {
                     <img src={fix} alt="NoImage"/>
                 </span>
             </div>
-            <Option list={season} handler={props.func} for="season"/>
+            <OptionRadio list={season} handler={props.func} for="season"/>
         </div>
     )
 }

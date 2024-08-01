@@ -31,12 +31,12 @@ const DateSelection = (props) => {
                 <AllSelectButton for="date"/>
             </div>
             <div className="option-list">
-                <span className="option-year">
+                <div className="option-year">
                     <Option list={year} handler={props.func} for="year"/>
-                </span>
-                <span className="option-month">
+                </div>
+                <div className="option-month">
                     <Option list={month} handler={props.func} for="month"/>    
-                </span>
+                </div>
             </div>
         </div>
     )

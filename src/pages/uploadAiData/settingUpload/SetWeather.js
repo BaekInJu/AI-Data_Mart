@@ -1,5 +1,6 @@
 import React from "react";
 import Option from "../../../components/Option";
+import OptionRadio from "../../../components/OptionRadio";
 import fix from"../../../assets/image/fix.png";
 
 const SetWeather = (props) => {
@@ -19,7 +20,8 @@ const SetWeather = (props) => {
                     <img src={fix} alt="NoImage"/>
                 </span>
             </div>
-            <Option list={weather} handler={props.func} for="weather"/>
+            {/* <Option list={weather} handler={props.func} for="weather"/> */}
+            <OptionRadio list={weather} handler={props.func} for="weather"/>
         </div>
     )
 }

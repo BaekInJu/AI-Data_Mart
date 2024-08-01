@@ -5,11 +5,12 @@
 }
 
 .option-year {
-    display: inline;
+    /* display: inline; */
     float: left;
+    display: block;
     /* width: 158px; */
     /* height: 348px; */
-    flex-grow: 1;
+    /* flex-grow: 1; */
 }
 
 .option-month {
