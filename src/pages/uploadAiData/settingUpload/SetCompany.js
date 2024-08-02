@@ -16,7 +16,7 @@ const SetCompany = (props) => {
                     <p>업체</p>
                 </span>
                 <span className="fix">
-                    <img src={add} alt="NoImage"/>
+                    {/* <img src={add} alt="NoImage"/> */}
                 </span>
             </div>
             <OptionRadio list={company} handler={props.handler} for="company"/>

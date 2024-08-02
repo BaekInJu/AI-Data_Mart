@@ -16,7 +16,7 @@ const SetSubProject = (props) => {
                     <p>서브 프로젝트</p>
                 </span>
                 <span className="fix">
-                    <img src={add} alt="NoImage"/>
+                    {/* <img src={add} alt="NoImage"/> */}
                 </span>
             </div>
             <OptionRadio list={company} handler={props.handler} for="subProject"/>

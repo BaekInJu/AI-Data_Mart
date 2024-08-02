@@ -15,7 +15,7 @@ const SetBright = (props) => {
                     <p>밝기</p>
                 </span>
                 <span className="fix">
-                    <img src={fix} alt="NoImage"/>
+                    {/* <img src={fix} alt="NoImage"/> */}
                 </span>
             </div>
             <OptionRadio list={bright} handler={props.func} for="bright"/>

@@ -131,3 +131,8 @@
     height: 140px;
     width: 250px;
 }
+
+.set-project-modal-options .title {
+    display: flex;
+    justify-content: center;
+}

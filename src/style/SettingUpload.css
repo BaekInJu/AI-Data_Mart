@@ -13,9 +13,11 @@
 }
 
 .set-upload-category .title {
-    margin-left: 5px;
-    float: left;
+    /* margin-left: 5px;
+    float: left; */
+
 }
+
 
 .set-upload-category .fix {
     float: right;
