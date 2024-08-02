@@ -20,7 +20,7 @@ const SetProjectDetail = (props) => {
                     <p>세부 프로젝트</p>
                 </span>
                 <span className="fix">
-                    <img src={add} alt="NoImage"/>
+                    {/* <img src={add} alt="NoImage"/> */}
                 </span>
             </div>
             <OptionRadio list={projectDeteil} handler={props.handler} for="projectDetail"/>

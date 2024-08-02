@@ -16,7 +16,7 @@ const SetAttribute = (props) => {
                     <p>위치</p>
                 </span>
                 <span className="fix">
-                    <img src={fix} alt="NoImage"/>
+                    {/* <img src={fix} alt="NoImage"/> */}
                 </span>
             </div>
             {/* <Option list={attribute} handler={props.func} for="attribute"/> */}

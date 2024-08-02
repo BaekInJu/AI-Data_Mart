@@ -28,6 +28,14 @@ const UploadAiFile = () => {
         };
     }, [inputRef]);
 
+    const deleteFiled = () => {
+        setFileName();
+    }
+    useEffect(()=>{
+        if (inputRef.current !== null){
+            
+        }
+    })
     return (
         <>
             {fileName ? <div  className="file-name">

@@ -16,7 +16,7 @@ const SetSeason = (props) => {
                     <p>계절</p>
                 </span>
                 <span className="fix">
-                    <img src={fix} alt="NoImage"/>
+                    {/* <img src={fix} alt="NoImage"/> */}
                 </span>
             </div>
             <OptionRadio list={season} handler={props.func} for="season"/>

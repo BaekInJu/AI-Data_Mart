@@ -17,7 +17,7 @@ const SetWeather = (props) => {
                     <p>날씨</p>
                 </span>
                 <span className="fix">
-                    <img src={fix} alt="NoImage"/>
+                    {/* <img src={fix} alt="NoImage"/> */}
                 </span>
             </div>
             {/* <Option list={weather} handler={props.func} for="weather"/> */}
