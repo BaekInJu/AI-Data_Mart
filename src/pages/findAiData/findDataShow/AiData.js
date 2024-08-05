@@ -7,13 +7,29 @@ const AiData = (props) => {
 
     const [isModalOpened, setIsModalOpened] = useState(false);
 
-    const openModal = (handler) => {
-        setIsModalOpened(true)
-    }
+    // 모달 열기 함수
+    const openModal = (e) => {
+        // 이벤트 전파 중단
+        // e.stopPropagation();
+        // setIsModalOpened(true);
+        if (isModalOpened) return;
+        setIsModalOpened(true);
+    };
+
+    // 모달 닫기 함수
+    const closeModal = () => {
+        setIsModalOpened(false);
+    };
+
+    //다운로드 함수
+    const download = (e) => {
+        e.stopPropagation();
+        console.log("download!!");
+   }
     return(
-        <div className="ai-data" >
+        <div className="ai-data" onClick={openModal}>
             <div className="aidata-download-button">
-                <button onClick={openModal}><img src={DownloadIcon} alt="NoImage"/><p>다운로드</p></button>
+                <button onClick={download}><img src={DownloadIcon} alt="NoImage"/><p>다운로드</p></button>
             </div>
             <div className="ai-data-title">
                 <p>MOD / BRIGADE / #001 </p>
@@ -27,7 +43,7 @@ const AiData = (props) => {
             <div className="ai-data-tag">
                 <p>#사람 #로봇 #지그 #배경 #여름 #흐림 </p>
             </div>
-            <AiDataModal isModalOpened={isModalOpened} setIsModalOpened={setIsModalOpened} />
+            <AiDataModal isModalOpened={isModalOpened} setIsModalOpened={closeModal} />
         </div>
     )
 }

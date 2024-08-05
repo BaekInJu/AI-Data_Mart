@@ -22,7 +22,11 @@ const CalendarModal = (props) => {
             onRequestClose={()=>props.setIsModalOpened(false)}
             shouldCloseOnOverlayClick
         >
-            <Calendar onChange={change}/>
+            {/* <Calendar onChange={change}/> */}
+            <Calendar 
+                onChange={change} 
+                formatDay={(locale, date) => moment(date).format("DD")} 
+            />
         </Modal>
          
         </>
