@@ -16,6 +16,7 @@ const UploadAiFile = () => {
         // 파일 삭제부분
         setFileName();
     }
+
     useEffect(() => {
         if (inputRef.current !== null) {
             inputRef.current.addEventListener("input", inputHandler);
@@ -31,9 +32,10 @@ const UploadAiFile = () => {
     const deleteFiled = () => {
         setFileName();
     }
+    
     useEffect(()=>{
         if (inputRef.current !== null){
-            
+
         }
     })
     return (
