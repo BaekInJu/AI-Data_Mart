@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
 import "../../../style/Modal.css"
+
 const importAll = (r) => {
     return r.keys().map(r);
 };
 const AiDataModal = (props) => {
     const images = importAll(require.context("../../../assets/dummyData/", false, /\.(png|jpe?g|svg)$/));
+
     return(
         <>
         <Modal
