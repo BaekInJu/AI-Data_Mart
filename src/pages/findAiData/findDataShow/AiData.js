@@ -18,14 +18,14 @@ const AiData = (props) => {
 
     // 모달 닫기 함수
     const closeModal = () => {
-        setIsModalOpened(false);
+        setIsModalOpened(false); 
     };
-
     //다운로드 함수
     const download = (e) => {
         e.stopPropagation();
         console.log("download!!");
    }
+
     return(
         <div className="ai-data" onClick={openModal}>
             <div className="aidata-download-button">
