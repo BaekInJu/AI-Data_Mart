@@ -7,7 +7,6 @@ const importAll = (r) => {
 };
 const AiDataModal = (props) => {
     const images = importAll(require.context("../../../assets/dummyData/", false, /\.(png|jpe?g|svg)$/));
-
     return(
         <>
         <Modal
