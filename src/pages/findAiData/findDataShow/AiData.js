@@ -26,6 +26,7 @@ const AiData = (props) => {
         console.log("download!!");
    }
 
+
     return(
         <div className="ai-data" onClick={openModal}>
             <div className="aidata-download-button">

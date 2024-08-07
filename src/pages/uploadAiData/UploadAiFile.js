@@ -2,54 +2,94 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import Delete from "../../assets/image/delete.png";
 
 const UploadAiFile = () => {
-    const [fileName, setFileName] = useState("");
-    const inputRef = useRef(null);
+  const [fileName, setFileName] = useState("");
+  const [dragActive, setDragActive] = useState(false);
+  const inputRef = useRef(null);
+  const dropRef = useRef(null);
 
-    const inputHandler = useCallback((event) => {
-        const files = event.target && event.target.files;
-        if (files && files[0]) {
-            setFileName(files[0].name);
-        }
-    }, []);
+  const inputHandler = useCallback((event) => {
+    const files = event.target && event.target.files;
+    if (files && files[0]) {
+      setFileName(files[0].name);
+    }
+  }, []);
 
-    const deleteFile = () => {
-        // 파일 삭제부분
-        setFileName();
+  const deleteFile = () => {
+    setFileName("");
+  };
+
+  useEffect(() => {
+    if (inputRef.current !== null) {
+      inputRef.current.addEventListener("input", inputHandler);
     }
 
-    useEffect(() => {
-        if (inputRef.current !== null) {
-            inputRef.current.addEventListener("input", inputHandler);
-        }
+    return () => {
+      if (inputRef.current !== null) {
+        inputRef.current.removeEventListener("input", inputHandler);
+      }
+    };
+  }, [inputRef]);
 
-        return () => {
-            if (inputRef.current !== null) {
-                inputRef.current.removeEventListener("input", inputHandler);
-            }
-        };
-    }, [inputRef]);
-    
-    const deleteFiled = () => {
-        setFileName();
+  const handleDragOver = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setDragActive(true);
+  };
+
+  const handleDragLeave = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setDragActive(false);
+  };
+
+  const handleDrop = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setDragActive(false);
+    const files = event.dataTransfer && event.dataTransfer.files;
+    if (files && files[0]) {
+      setFileName(files[0].name);
+      // inputRef.current.files = files; // 필드 업데이트
     }
-    
-    useEffect(()=>{
-        if (inputRef.current !== null){
-                
-        }
-    })
-    return (
-        <>
-            {fileName ? <div  className="file-name">
-                <p>{fileName}</p>
-                <button onClick={deleteFile}><img src={Delete} /></button>
-                </div> : null}
-            <label htmlFor="upload-ai-file">
-                <p>파일찾기</p>
-            </label>
-            <input id="upload-ai-file" type="file" ref={inputRef} />
-        </>
-    );
+  };
+
+  return (
+    <>
+      {fileName ? (
+        <div className="file-name">
+          <p>{fileName}</p>
+          <button onClick={deleteFile}>
+            <img src={Delete} alt="파일 삭제" />
+          </button>
+        </div>
+      ) : null}
+      <div
+        ref={dropRef}
+        className={`drag-and-drop-area ${dragActive ? "active" : ""}`}
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        onDrop={handleDrop}
+      >
+        {!fileName && (
+          <p style={{
+            margin:0,
+            color: "rgba(0, 0, 0, 0.4",
+            marginRight:"10px",
+            marginTop:"4px"
+          }}className="drag-and-drop">여기에 파일을 가져오세요.</p>
+        )}
+      </div>
+      <label htmlFor="upload-ai-file">
+        <p>파일찾기</p>
+      </label>
+      <input
+        id="upload-ai-file"
+        type="file"
+        ref={inputRef}
+        style={{ display: "none" }}
+      />
+    </>
+  );
 };
 
 export default UploadAiFile;
