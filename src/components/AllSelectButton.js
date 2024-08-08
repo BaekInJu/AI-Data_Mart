@@ -1,6 +1,7 @@
 import React from "react";
 import "../style/AllSelectButton.css"
 
+//All 버튼 컴포넌트
 const AllSelectButton = (props) => {
 
     return(

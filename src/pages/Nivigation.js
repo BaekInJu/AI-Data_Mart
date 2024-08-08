@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/image/logo.png"
 
+//메뉴 바 컴포넌트
 const Navigation = () => {
     return(
         <>

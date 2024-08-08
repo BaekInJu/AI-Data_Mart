@@ -2,9 +2,9 @@ import React from "react";
 import AllSelectButton from "../../../components/AllSelectButton";
 import Option from "../../../components/Option";
 
-const SiteSelection = (props) => {
-    // 옵션 배열
-    const siteList = [
+//데이터 찾기 사이트 카테고리 컴포넌트
+const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트에 있는 배열에 추가해 주는 함수
+    const siteList = [  //사이트 카테고리 옵션 배열
         "HDS / AJIN / 지게차",
         "HDS / AJIN / NE",
         "HDS / AJIN / AD",
@@ -15,7 +15,7 @@ const SiteSelection = (props) => {
         "MOD / VRIGADE / #002"
       ];
 
-      const handler = () => {
+      const handler = () => {    //All버튼 핸들러 함수
         let test = document.getElementById("site : HDS / AJIN / 지게차");
         let test1 = document.getElementById("site");
         if(test1.checked === true){

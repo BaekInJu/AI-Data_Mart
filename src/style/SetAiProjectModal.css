@@ -136,3 +136,7 @@
     display: flex;
     justify-content: center;
 }
+
+.inp-sub-project input {
+    padding-left: 10px;
+}

@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import "../../../style/Modal.css"
 
-const importAll = (r) => {
+const importAll = (r) => {   //테스트용 사진 import함수
     return r.keys().map(r);
 };
-const AiDataModal = (props) => {
-    const images = importAll(require.context("../../../assets/dummyData/", false, /\.(png|jpe?g|svg)$/));
+
+//데이터셋 모달창 컴포넌트
+const AiDataModal = (props) => {   //propsisModalOpened : 모달 창 상태 변수 props.setIsModalOpened : 모달 창 상태 핸들러 함수
+    const images = importAll(require.context("../../../assets/dummyData/", false, /\.(png|jpe?g|svg)$/));  //테스트용 이미지 형식 선언
     return(
         <>
         <Modal

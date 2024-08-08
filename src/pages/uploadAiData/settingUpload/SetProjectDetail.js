@@ -1,9 +1,9 @@
 import React from "react";
 import OptionRadio from "../../../components/OptionRadio";
-import add from "../../../assets/image/add.png";
 
-const SetProjectDetail = (props) => {
-    const projectDeteil = [
+//상세프로젝트 카테고리 컴포넌트
+const SetProjectDetail = (props) => {   //props.func : 선택한 옵션 부모 컴포넌트 배열에 저장하는 함수
+    const projectDeteil = [ //상세 프로젝트 옵션을 저장할 배열
         "240615_#001",
         "240615_#002",
         "240615_#003",

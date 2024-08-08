@@ -1,8 +1,9 @@
 import React from "react";
 import Option from "../../../components/Option";
 
-const ObjectSelection = (props) => {
-    const object = [
+//데이터 찾기의 객체 카테고리 컴포넌트
+const ObjectSelection = (props) => { //props.func : 옵션을 부모 컴포넌트에 있는 배열에 추가해 주는 함수
+    const object = [  //객체 카테고리의 속성을 저장할 배열
         "Person",
         "Cyclist",
         "MotorCyclist",

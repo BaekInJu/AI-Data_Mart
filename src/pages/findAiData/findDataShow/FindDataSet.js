@@ -2,7 +2,8 @@ import React from "react";
 import "../../../style/FindDataSet.css";
 import AiData from "./AiData";
 
-const FindDataSet = (props) => {
+//데이터셋 목록 관리 컴포넌트
+const FindDataSet = (props) => {  //props.num : 데이터셋 개수
     return(
         <div className="find-data-set">
             <div className="number-data">

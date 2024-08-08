@@ -2,30 +2,26 @@ import React, { useState } from "react";
 import DownloadIcon from "../../../assets/image/download-icon.png"
 import AiDataModal from "./AiDataModal";
 
-
+//데이터셋 구성 컴포넌트
 const AiData = (props) => {
 
-    const [isModalOpened, setIsModalOpened] = useState(false);
+    const [isModalOpened, setIsModalOpened] = useState(false);   //모달창 열림 / 닫힘 상태를 관리하는 boolean 변수(초기값 false)
 
     // 모달 열기 함수
     const openModal = (e) => {
-        // 이벤트 전파 중단
-        // e.stopPropagation();
-        // setIsModalOpened(true);
-        if (isModalOpened) return;
+        if (isModalOpened) return;   //이미 열려있는 상태라면 return
         setIsModalOpened(true);
     };
 
     // 모달 닫기 함수
     const closeModal = () => {
-        setIsModalOpened(false); 
+        setIsModalOpened(false);   //모달창 상태를 false로 세팅
     };
     //다운로드 함수
     const download = (e) => {
-        e.stopPropagation();
-        console.log("download!!");
+        e.stopPropagation();  //이벤트 전달 차단(다운로드 버튼을 눌렀을땐 모달 창이 뜨면 안됨)
+        console.log("download!!");  //테스트 출력
    }
-
 
     return(
         <div className="ai-data" onClick={openModal}>

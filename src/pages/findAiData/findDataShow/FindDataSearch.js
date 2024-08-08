@@ -1,6 +1,7 @@
 import React from "react";
 import search from "../../../assets/image/search.png";
 
+//데이터 찾기의 검색창 컴포넌트
 const SearchInput = () => {
     return(
         <div className="find-data-input-form">

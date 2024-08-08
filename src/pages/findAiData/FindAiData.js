@@ -12,21 +12,21 @@ import ResolutionSelection from "./findDataOptions/Resoluntion";
 import FindDataSearch from "./findDataShow/FindDataSearch";
 import FindDataSet from "./findDataShow/FindDataSet";
 
+//데이터 찾기 페이지 구성 컴포넌트, 최상위 컴포넌트 
 const FindAiData = () => {
-  //체크된 속성 배열(JSON)
-  const [clicked, setClicked] = useState([]);
+  const [clicked, setClicked] = useState([]);   //체크된 속성 배열(JSON)
   
-  //체크 항목 배열에 추가 함수
-  const handlerOption = (click) => {
+  //체크 항목 clicked배열에 추가 함수
+  const handlerOption = (click) => {  //click에는 json형식으로 넘어옴
     setClicked((prevClicked) => {
-      let newClicked = [...prevClicked];
+      let newClicked = [...prevClicked];  //기존의 배열을 새로운 배열에 저장해 줌
       for(let i=0; i<newClicked.length; i++){
-        if(JSON.stringify(newClicked[i]) === JSON.stringify(click)){
+        if(JSON.stringify(newClicked[i]) === JSON.stringify(click)){  //문자열로 변환하여 비교
           newClicked = newClicked.filter(item => JSON.stringify(item) !== JSON.stringify(click));
           return newClicked;
         }
       }
-      newClicked.push(click);
+      newClicked.push(click);  //기존에 없는 값이면 추가
       console.log("Updated array:", newClicked);   //테스트 출력
       return newClicked;
     });

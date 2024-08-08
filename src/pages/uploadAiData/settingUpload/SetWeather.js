@@ -1,10 +1,10 @@
 import React from "react";
-import Option from "../../../components/Option";
 import OptionRadio from "../../../components/OptionRadio";
-import fix from"../../../assets/image/fix.png";
 
-const SetWeather = (props) => {
-    const weather = [
+
+//데이터 올리기 페이지의 날씨 카테고리 컴포넌트
+const SetWeather = (props) => { //props.func : 선택한 옵션 부모 컴포넌트 배열에 저장하는 함수
+    const weather = [  //날씨 카테고리 옵션 배열
         "None",
         "Clear",
         "Rain",
