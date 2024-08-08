@@ -1,9 +1,9 @@
 import React from "react";
-import fix from"../../../assets/image/fix.png";
 import OptionRadio from "../../../components/OptionRadio";
 
-const SetBright = (props) => {
-    const bright = [
+//데이터 올리기 페이지의 밝기 카테고리 컴포넌트
+const SetBright = (props) => { //props.func : 선택한 옵션 부모 컴포넌트 배열에 저장하는 함수
+    const bright = [  //밝기 옵션 배열
         "None",
         "Bright",
         "Dark"

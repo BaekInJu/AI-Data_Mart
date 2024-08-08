@@ -1,8 +1,9 @@
 import React from "react";
 import Option from "../../../components/Option";
 
-const WeatherSeletion = (props) => {
-    const weather = [
+//데이터 찾기의 날씨 카테고리 컴포넌트
+const WeatherSeletion = (props) => { //props.func : 옵션을 부모 컴포넌트에 있는 배열에 추가해 주는 함수
+    const weather = [  //날씨 카테고리 옵션 배열
         "None",
         "Clear",
         "Rain",

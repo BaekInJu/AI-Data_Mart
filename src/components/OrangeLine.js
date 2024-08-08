@@ -1,7 +1,7 @@
 import React from "react";
 import propTypes from "prop-types"
 
-
+//웹사이트 메뉴바와 본문 내용을 구분하는 오랜지색 선
 const OrangeLine = (props) => {
     return(
         <>

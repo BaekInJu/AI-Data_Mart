@@ -1,8 +1,9 @@
 import React from "react";
 import Option from "../../../components/Option";
 
-const SeasonSelection = (props) => {
-    const season = [
+//데이터 첮기의 계절 카테고리 컴포넌트
+const SeasonSelection = (props) => {   //props.func : 옵션을 부모 컴포넌트에 있는 배열에 추가해 주는 함수
+    const season = [  //계절 카테고리 옵션 배열
         "None",
         "Spring",
         "Summer",

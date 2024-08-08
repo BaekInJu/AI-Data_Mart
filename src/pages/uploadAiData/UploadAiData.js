@@ -15,11 +15,11 @@ import SetWeather from "./settingUpload/SetWeather";
 import SetBright from "./settingUpload/SetBright";
 import SetResolution from "./settingUpload/SetResolution";
 
-
+//데이터 올리기 페이지 구성 컴포넌트
 const UploadAiData = () => {
-  const [clicked, setClicked] = useState([]);
+  const [clicked, setClicked] = useState([]);   //선택된 카테고리 저장 배열
   //체크 항목 배열에 추가 함수
-  const handlerOption = (click) => {
+  const handlerOption = (click) => {     //click은 json형식으로 들어옴
     setClicked((prevClicked) => {
       let newClicked = [...prevClicked];
       for(let i=0; i<newClicked.length; i++){
@@ -32,6 +32,10 @@ const UploadAiData = () => {
       console.log("Updated array:", newClicked);   //테스트 출력
       return newClicked;
     });
+  }
+
+  const upload = () => {
+    console.log("uploading...");
   }
 
   const [percent,setPercent] = useState(45);
@@ -82,7 +86,7 @@ const UploadAiData = () => {
           </div>
           <p id="percent">{percent}%</p>
         </div>
-        <button id="upload-button">업로드</button>
+        <button id="upload-button" onClick={upload}>업로드</button>
         <img id="guide" src={guide} alt="NoImage" />
       </div>
     </div>

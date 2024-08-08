@@ -8,7 +8,9 @@ import UploadModelData from "../pages/UploadModelData";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 
+//라우터 컴포넌트
 const Router = () => {
+  //메뉴 바에서 클릭시 body 부분이 해당 페이지로 바뀜
   return (
     <div>
       <Routes>
