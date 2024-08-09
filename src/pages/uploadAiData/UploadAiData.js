@@ -6,7 +6,6 @@ import SetAiProject from "./settingUpload/SetAiProject";
 import search from "../../assets/image/search.png"
 import calendar from "../../assets/image/calendar.png"
 import SetAiDate from "./settingUpload/SetAiDate";
-
 import guide from "../../assets/image/guide.png";
 import UploadAiFile from "./UploadAiFile";
 import SetAttribute from "./settingUpload/SetAttribute";
@@ -21,24 +20,24 @@ const UploadAiData = () => {
   //체크 항목 배열에 추가 함수
   const handlerOption = (click) => {     //click은 json형식으로 들어옴
     setClicked((prevClicked) => {
-      let newClicked = [...prevClicked];
+      let newClicked = [...prevClicked];    //그 전의 배열을 임시 저장해둠
       for(let i=0; i<newClicked.length; i++){
-        if(JSON.stringify(newClicked[i]) === JSON.stringify(click)){
-          newClicked = newClicked.filter(item => JSON.stringify(item) !== JSON.stringify(click));
-          return newClicked;
+        if(JSON.stringify(newClicked[i]) === JSON.stringify(click)){   //저장되어 있던 배열을 돌면서 새로 들어온 type과 중복되는지 확인
+          newClicked = newClicked.filter(item => JSON.stringify(item) !== JSON.stringify(click));    //중복되는 type의 value를 변경
         }
+        return newClicked;  
       }
-      newClicked.push(click);
+      newClicked.push(click);   //새로 들어온 type이라면 배열에 추가
       console.log("Updated array:", newClicked);   //테스트 출력
       return newClicked;
     });
-  }
+  } 
 
-  const upload = () => {
-    console.log("uploading...");
+  const upload = () => {   //사용자가 올린 파일을 서버에 전송하는 함수
+    console.log("uploading...");      //테스트 출력
   }
-
-  const [percent,setPercent] = useState(45);
+  
+  const [percent,setPercent] = useState(45);     //업로드 상태를 저장할 변수
 
   return (
     <div className="upload-data-body">

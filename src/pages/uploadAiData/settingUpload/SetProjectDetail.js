@@ -27,5 +27,5 @@ const SetProjectDetail = (props) => {   //props.func : 선택한 옵션 부모 �
         </div>
     )
 }
-
+        
 export default SetProjectDetail;
