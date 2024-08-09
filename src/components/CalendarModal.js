@@ -26,7 +26,7 @@ const CalendarModal = (props) => {
                 onChange={change} 
                 formatDay={(locale, date) => moment(date).format("DD")} 
             />
-        </Modal>
+        </Modal> 
          
         </>
     )
