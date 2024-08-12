@@ -16,6 +16,7 @@ import SetResolution from "./settingUpload/SetResolution";
 
 //데이터 올리기 페이지 구성 컴포넌트
 const UploadAiData = () => {
+  
   const [clicked, setClicked] = useState([]);   //선택된 카테고리 저장 배열
   //체크 항목 배열에 추가 함수
   const handlerOption = (click) => {     //click은 json형식으로 들어옴
@@ -32,12 +33,12 @@ const UploadAiData = () => {
       return newClicked;
     });
   } 
-
+  
   const upload = () => {   //사용자가 올린 파일을 서버에 전송하는 함수
     console.log("uploading...");      //테스트 출력
   }
   
-  const [percent,setPercent] = useState(45);     //업로드 상태를 저장할 변수
+  const [percent,setPercent] = useState(43.25);     //업로드 상태를 저장할 변수
 
   return (
     <div className="upload-data-body">
