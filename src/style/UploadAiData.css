@@ -171,12 +171,13 @@
     font-weight: bold;
     border: none;
     margin-left: 20px;
+    transition: background 0.3s;
 }
 
 .uploading-bar #upload-button:hover {
     /* background-color: rgb(248, 101, 80); */
     background-color: rgb(124, 17, 0);
-    transition: background 0.3s;
+
 }
 
 .uploading-bar .frame {
@@ -207,11 +208,12 @@
     border-radius: 10px;
     padding: 5px 10px 5px 10px;
     border-color: rgba(0, 0, 0, 0.2);
+    transition: background 0.3s;
 }
 
 .upload-file label:hover {
     background-color: bisque;
-    transition: background 0.3s;
+
 }
 
 .upload-file label p {
@@ -242,6 +244,7 @@
 .file-name button img {
     height: 10px;
 }
+
 
 .uploading-bar #percent {
     position: fixed;

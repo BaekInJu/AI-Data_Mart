@@ -1,10 +1,18 @@
 import React, { useState } from "react";
 import Modal from "react-modal";
-import "../../../style/Modal.css"
+import "../../../style/dataSetModal.css"
 
 const importAll = (r) => {   //테스트용 사진 import함수
     return r.keys().map(r);
 };
+
+const openImageModal = () => {
+    //사진 클릭시 사진 모달창 띄우기 함수
+}
+
+const addSeletedImg = () => {
+    //선택된 이미지 배열에 추가 함수
+}
 
 //데이터셋 모달창 컴포넌트
 const AiDataModal = (props) => {   //propsisModalOpened : 모달 창 상태 변수 props.setIsModalOpened : 모달 창 상태 핸들러 함수
@@ -42,8 +50,11 @@ const AiDataModal = (props) => {   //propsisModalOpened : 모달 창 상태 변�
                 <div className="img-list">
                     <div className="img-container">
                         {images.map((image, index) => (
-                            <img key={index} src={image} alt={`20240624_021818_CH02_000000${index}.jpg${index}`} />
-                        ))}
+                            <div className="dataSet">
+                                <img  key={index} src={image} alt={`20240624_021818_CH02_000000${index}.jpg${index}`} />
+                                <input type="checkbox" id={`20240624_021818_CH02_000000${index}.jpg${index}`} />
+                            </div> 
+                    ))}
                     </div>
                 </div>
             </div>

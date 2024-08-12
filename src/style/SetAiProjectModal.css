@@ -46,12 +46,13 @@
     border-width: 1px;
     border-color: rgba(0, 0, 0, 0.2);
     font-weight: 600;
+    transition: color 0.3s, background 0.3s;
 }
 
 .set-project-modal #title button:hover {
     background-color: rgb(127, 127, 127);
     color: white;
-    transition: color 0.3s, background 0.3s;
+
 }
 
 #discription {
@@ -112,12 +113,13 @@
     border: none;
     padding: 10px 40px 10px 40px;
     border-radius: 10px;
+    transition: background 0.3s;
 }
 
 
 .submit button:hover {
     background-color: rgb(124, 17, 0);
-    transition: background 0.3s;
+
 }
 
 .upload-data-body .checkbox-lines {
