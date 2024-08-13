@@ -5,7 +5,7 @@ import OrangeLine from "../components/OrangeLine";
 const Ai = () => {
   return (
     <div>
-      <h1>AI</h1>
+      <h1>업데이트중</h1>
     </div>
   );
 };

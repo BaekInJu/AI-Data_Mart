@@ -21,8 +21,8 @@ const Navigation = () => {
                 
             </div>
             <div className="registration">
-                    <Link to="/login">로그인</Link>
                     <Link to="/signup">회원가입</Link>
+                    <Link to="/login">로그인</Link>
                 </div>
         </div>
         <hr className="navigation-bottom-hr"/>
