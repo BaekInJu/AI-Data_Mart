@@ -5,8 +5,8 @@ import FindAiData from "../pages/findAiData/FindAiData";
 import FindModelData from "../pages/FindModelData";
 import UploadAiData from "../pages/uploadAiData/UploadAiData";
 import UploadModelData from "../pages/UploadModelData";
-import Login from "../pages/Login";
-import Signup from "../pages/Signup";
+import Login from "../pages/login/Login";
+import Signup from "../pages/signup/Signup";
 
 //라우터 컴포넌트
 const Router = () => {

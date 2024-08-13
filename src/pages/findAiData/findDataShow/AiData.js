@@ -12,7 +12,7 @@ const AiData = (props) => {
         if (isModalOpened) return;   //이미 열려있는 상태라면 return
         setIsModalOpened(true);
     };
-
+    
     // 모달 닫기 함수
     const closeModal = () => {
         setIsModalOpened(false);   //모달창 상태를 false로 세팅

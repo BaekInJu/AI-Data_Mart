@@ -6,6 +6,7 @@ const FindModelData = () => {
   return (
     <div>
       <OrangeLine text="모델 찾기"/>
+      <h1>업데이트중</h1>
     </div>
   );
 };
