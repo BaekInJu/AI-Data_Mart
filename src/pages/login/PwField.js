@@ -9,7 +9,7 @@ const PwField = (props) => {
     return(
         <>
         <Password>
-            <Label>패스워드</Label>
+            <Label>비밀번호</Label>
             <InputPW onChange={onChange} value={props.inpPw}/>
         </Password>
         </>
