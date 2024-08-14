@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import  { Wrapper } from "./Styles";
 import { Title } from "./Styles";
 import { Description } from "./Styles";
+import { FindField } from "./Styles";
 import IdField from "./IdField";
 import PwField from "./PwField";
 import SaveId from "./SaveId";
@@ -48,8 +48,10 @@ const Login = () => {
                 <PwField setInpPw={setInpPw} inpPw={inpPw}/>
                 <SaveId />
                 <LoginBtn onClick={checkLogin}/>
-                <FindId />
-                <FindPw />
+                <FindField>
+                    <FindId />
+                    <FindPw />
+                </FindField>
             </Wrapper>
         </div>
     )

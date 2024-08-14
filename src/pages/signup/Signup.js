@@ -1,10 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import { Title } from "../login/Styles";
+import { Wrapper } from "../login/Styles";
+import UserType from "./UserType";
+import LoginInfo from "./LoginInfo";
 
 //회원가입 페이지 컴포넌트
 const Signup = () => {
+    const [userType, setUserType] = useState();   //회원유형
+    const [email,setEmail] = useState();        //사용자 이메일
+    const [password, setPassword] = useState();     //비밀번호
+    const [checkPw, setCheckPw] = useState();       //비밀번호 확인
+    const [name, setName] = useState();             //이름
+    const [company, setCompany] = useState();       //회사명
+    const [department, setDepartmant] = useState();     //부서명
+
     return(
         <div>
-            <h1>Signup</h1>
+            <Wrapper>
+                <Title>회원가입 정보입력</Title>
+                <UserType setUserType={setUserType}/>
+                <LoginInfo 
+                    setEmail={setEmail}
+                    setPassword={setPassword}
+                    setCheckPw={setCheckPw}
+                />
+            </Wrapper>
         </div>
     )
 }

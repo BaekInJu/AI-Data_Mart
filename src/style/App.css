@@ -80,11 +80,11 @@
   margin: 0 15px;
   text-decoration: none;
   color: rgb(127, 127, 127);
+  transition: color 0.2s;
 }
 
 .menu a:hover {
   color: rgb(245, 130, 30);
-  transition: color 0.2s;
 }
 
 .menu p {
@@ -103,6 +103,12 @@
   margin-left: 15px;
   text-decoration: none;
   color: rgb(173, 173, 173);
+  transition: color 0.2s;
+}
+
+.registration a:hover {
+  color: #282c34;
+  font-weight: bold;
 }
 
 .navigation-bottom-hr {

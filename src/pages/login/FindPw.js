@@ -3,7 +3,7 @@ import { FindButton } from "./Styles";
 
 const FindPw = () => {
     return(
-        <FindButton>비밀번호</FindButton>
+        <FindButton>비밀번호 찾기</FindButton>
     )
 }
 
