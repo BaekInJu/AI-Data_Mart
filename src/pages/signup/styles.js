@@ -37,5 +37,41 @@ export const EmailField = styled.div`
 `
 
 export const InpLabel = styled.h4`
-    text-align: left;
+    display: inline;
+`
+
+export const InpEmail = styled.input`
+    display: inline;
+    width: 290px;
+    height: 30px;
+    font-size: 20px;
+    margin: 20px;
+`
+
+export const CheckEmail = styled.button`
+    width: 80px;
+    height: 40px;
+    display: inline-blcok;
+    background-color:  rgb(245, 123, 18);
+    border-width: 0px;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight:bold;
+    margin-top: 30px;
+    transition: background 0.4s;
+    &:hover{
+        background-color:tomato;
+    }
+`
+
+export const PasswordField = styled.div`
+`
+
+export const InpContainer = styled.div`
+    display: flex;
+    align-content: space-between;
+`
+
+export const InpPassword = styled.input.attrs({type:'password'})`
 `

@@ -30,7 +30,7 @@ export const InputId = styled.input`
     display: block;
     width: 290px;
     height: 30px;
-    font-size: 25px;
+    font-size: 20px;
 `
 
 export const Label = styled.h3`
