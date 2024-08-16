@@ -22,6 +22,14 @@ const AiData = (props) => {
         e.stopPropagation();  //이벤트 전달 차단(다운로드 버튼을 눌렀을땐 모달 창이 뜨면 안됨)
         console.log("download!!");  //테스트 출력
    }
+   // Date 객체로 변환
+    const date = new Date(props.recordDate);
+
+    // 년, 월, 일 추출
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // getMonth()는 0부터 시작하므로 1을 더해줌
+    const day = String(date.getDate()).padStart(2, '0');
+
 
     return(
         <div className="ai-data" onClick={openModal}>
@@ -29,16 +37,20 @@ const AiData = (props) => {
                 <button onClick={download}><img src={DownloadIcon} alt="NoImage"/><p>다운로드</p></button>
             </div>
             <div className="ai-data-title">
-                <p>MOD / BRIGADE / #001 </p>
+                <p>{props.categoryName} / {props.companyNameEng} / {props.projectNemeEng} </p>
             </div>
             <hr />
             <div className="ai-data-info">
-                <div className="data-name"><p>ㆍ명칭: 240702_#001</p></div>
-                <div className="create-date"><p>ㆍ생성일: 2024년 1월 25일</p></div>
-                <div className="data-number"><p>ㆍ데이터개수: 5,105개</p></div>
+                <div className="data-name"><p>ㆍ명칭: {props.detailProjectName}</p></div>
+                <div className="create-date"><p>ㆍ생성일: {`${year}년 ${month}월 ${day}일`}</p></div>
+                <div className="data-number"><p>ㆍ데이터개수: {props.fileCount}개</p></div>
             </div>
             <div className="ai-data-tag">
-                <p>#사람 #로봇 #지그 #배경 #여름 #흐림 </p>
+                <p>{props.weatherType !== "None" && `#${props.weatherType} `} 
+                {props.seasonType !== "None"&&`#${props.seasonType} `} 
+                {props.luminosityType !== "None"&&`#${props.luminosityType} `} 
+                {props.resolutionType !== "None"&&`#${props.resolutionType} `} 
+                </p>
             </div>
             <AiDataModal isModalOpened={isModalOpened} setIsModalOpened={closeModal} />
         </div>

@@ -1,12 +1,12 @@
 import React from "react";
-import { InpLabel, InpPassword, PasswordField } from "./Styles";
+import { InpContainer, InpLabel, Inp, PasswordField } from "./Styles";
 
 const Password = () => {
     return(
-        <PasswordField>
+        <InpContainer>
             <InpLabel>비밀번호</InpLabel>
-            <InpPassword />
-        </PasswordField>
+            <Inp type="password" placeholder="비밀번호를 입력하세요."/>
+        </InpContainer>
     )
 }
 

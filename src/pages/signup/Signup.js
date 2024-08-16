@@ -3,6 +3,7 @@ import { Title } from "../login/Styles";
 import { Wrapper } from "../login/Styles";
 import UserType from "./UserType";
 import LoginInfo from "./LoginInfo";
+import PersonalInfo from "./PersonalInfo";
 
 //회원가입 페이지 컴포넌트
 const Signup = () => {
@@ -23,6 +24,11 @@ const Signup = () => {
                     setEmail={setEmail}
                     setPassword={setPassword}
                     setCheckPw={setCheckPw}
+                />
+                <PersonalInfo
+                    setName={setName}
+                    setCompany={setCompany}
+                    setDepartmant={setDepartmant}
                 />
             </Wrapper>
         </div>

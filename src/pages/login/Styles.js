@@ -105,3 +105,7 @@ export const FindField = styled.div`
     display: inline-block;
     align-content: space-between; 
 `
+
+export const PersonalInfoWrapper = styled.div`
+    margin-top: 50px;
+`

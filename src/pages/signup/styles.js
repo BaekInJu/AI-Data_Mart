@@ -14,7 +14,7 @@ export const Line = styled.hr`
 
 export const BorderLine = styled.hr`
     border-line: 2px;
-    // margin-bottom: 15px;
+    // margin-bottom: 25px;
 `
 
 export const InpUserTypeOption = styled.span`
@@ -38,9 +38,10 @@ export const EmailField = styled.div`
 
 export const InpLabel = styled.h4`
     display: inline;
+    margin-top: 6px;
 `
 
-export const InpEmail = styled.input`
+export const InpEmail = styled.input.attrs({placeholder:"아이디(이메일)을 입력하세요."})`
     display: inline;
     width: 290px;
     height: 30px;
@@ -65,13 +66,31 @@ export const CheckEmail = styled.button`
     }
 `
 
-export const PasswordField = styled.div`
-`
-
 export const InpContainer = styled.div`
+    margin-left: 36px;
+    width: 527px;
     display: flex;
-    align-content: space-between;
+    justify-content: space-between;
+    align-contents: center;
+    margin-bottom: 5px;
+`   
+
+export const Inp = styled.input.attrs(props=>({
+    type:props.type,
+    placeholder:props.placeholder
+}))`
+    display: inline;
+    width: 391px;
+    height: 30px;
+    font-size: 20px;
 `
 
-export const InpPassword = styled.input.attrs({type:'password'})`
+export const Serch = styled.img.attrs(props=>({
+    src:props.src
+}))`
+    // position: relative;
+    width: 30px;
+    right: 30px;
 `
+
+
