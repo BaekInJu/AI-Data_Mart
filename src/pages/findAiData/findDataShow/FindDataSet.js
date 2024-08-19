@@ -8,17 +8,22 @@ const FindDataSet = (props) => {  //props.num : 데이터셋 개수
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [page, setPage] = useState(0);   //페이지
 
-    useEffect(() => {
+    const changePage1 =() => { //테스트 페이징 함수
+        setPage(1)
+    }
+    const changePage0 = () => {  //테스트 페이징 함수0
+        setPage(0)
+    }
+    useEffect(() => { 
         // 요청을 보내는 함수 정의
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    "/dataset/search/all?pageingIndex=0&pageingSize=15&orderType=ASC"
+                    `/dataset/search/all?pageingIndex=${page}&pageingSize=16&orderType=ASC`
                 );
                 setData(response.data);  // 서버에서 받은 데이터 저장
-                console.log(data);
-                console.log("바로 여기 이 데이터" + response.data.companyNameEng);
                 setLoading(false);       // 로딩 상태를 false로 설정
             } catch (error) {
                 console.log(error);
@@ -28,18 +33,10 @@ const FindDataSet = (props) => {  //props.num : 데이터셋 개수
         };
 
         fetchData(); // 컴포넌트가 마운트될 때 데이터 요청
-    }, []);
+    }, [page]);
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
-    // useEffect(()=>{
-    //     axios(
-    //         {
-    //             url:"/dataset/search/all?pageingIndex=0&pageingSize=15&orderType=ASC",
-    //             method:"GET"
-    //         }
-    //     ).then(response => setData(response));
-    // })
 
     return(
         <div className="find-data-set">
@@ -67,6 +64,8 @@ const FindDataSet = (props) => {  //props.num : 데이터셋 개수
                 />;
             })}
             </div>
+            <button onClick={changePage0}>0</button>
+            <button onClick={changePage1}>1</button>
         </div>
     )
 }

@@ -38,20 +38,40 @@
 }
 
 .ai-data:hover {
-    border: solid;
+    /* border: solid;
     border-width: 2px;
-    border-color: rgb(245, 130, 30);
+    border-color: rgb(245, 130, 30); */
+    outline: 2px solid rgb(245, 130, 30);
+    /* hover 시 outline 사용 */
+    outline-offset: -2px;
+    /* outline의 위치를 요소 안쪽으로 조정 */
 }
 
 .ai-data:hover .ai-data-title p {
     text-decoration: underline;
+    transition: text-decoration 0.3s ease;
+    /* 부드러운 텍스트 변환 */
 }
 
-.find-data-list {
+/* .find-data-list {
     height: 550px;
     margin: 25px;
     margin-top: 5px;
-    /* text-align: left */
+    /* text-align: left 
+    overflow: auto;
+} */
+
+.find-data-list {
+    display: flex;
+    /* Flexbox 사용 */
+    flex-wrap: wrap;
+    /* 카드들이 넘치면 다음 줄로 이동 */
+    justify-content: flex-start;
+    /* 카드들을 왼쪽 정렬 */
+    /* 카드들 사이의 간격을 일정하게 */
+    height: 550px;
+    margin: 25px;
+    margin-top: 5px;
     overflow: auto;
 }
 
@@ -94,16 +114,55 @@
 
 }
 
-.ai-data-title {
+/* .ai-data-title {
     display: block;
     margin-top: 20px;
-}
+} */
 
 .ai-data-title p {
-    font-size: 25px;
+    font-size: 18px;
+    /* 폰트 크기 조정 */
     color: rgb(245, 130, 30);
     font-weight: 400;
+    max-width: 250px;
+    /* 최대 너비 설정 */
+    white-space: nowrap;
+    /* 한 줄로 표시 */
+    overflow: hidden;
+    /* 넘치는 텍스트 숨김 */
+    text-overflow: ellipsis;
+    /* 생략 부호 처리 */
 }
+
+.ai-data-info p,
+.ai-data-tag p {
+    font-size: 14px;
+    /* 폰트 크기 조정 */
+    max-width: 230px;
+    /* 최대 너비 설정 */
+    word-wrap: break-word;
+    /* 텍스트 줄바꿈 설정 */
+    white-space: normal;
+    /* 여러 줄로 표시 */
+}
+
+.ai-data {
+    display: inline-block;
+    text-align: center;
+    width: 300px;
+    height: auto;
+    /* 높이를 auto로 설정 */
+    border: solid;
+    border-width: 1px;
+    border-color: rgba(197, 197, 197, 0.7);
+    margin: 10px;
+    background-color: white;
+    padding: 15px;
+    /* 내부 여백 추가 */
+    box-sizing: border-box;
+    /* 패딩 포함 박스 사이징 */
+}
+
 
 .ai-data hr {
     margin: 15px;
