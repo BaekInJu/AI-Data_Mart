@@ -33,27 +33,31 @@ const AiData = (props) => {
 
     return(
         <div className="ai-data" onClick={openModal}>
-            <div className="aidata-download-button">
-                <button onClick={download}><img src={DownloadIcon} alt="NoImage"/><p>다운로드</p></button>
-            </div>
-            <div className="ai-data-title">
-                <p>{props.categoryName} / {props.companyNameEng} / {props.projectNemeEng} </p>
-            </div>
-            <hr />
-            <div className="ai-data-info">
-                <div className="data-name"><p>ㆍ명칭: {props.detailProjectName}</p></div>
-                <div className="create-date"><p>ㆍ생성일: {`${year}년 ${month}월 ${day}일`}</p></div>
-                <div className="data-number"><p>ㆍ데이터개수: {props.fileCount}개</p></div>
-            </div>
-            <div className="ai-data-tag">
-                <p>{props.weatherType !== "None" && `#${props.weatherType} `} 
-                {props.seasonType !== "None"&&`#${props.seasonType} `} 
-                {props.luminosityType !== "None"&&`#${props.luminosityType} `} 
-                {props.resolutionType !== "None"&&`#${props.resolutionType} `} 
-                </p>
-            </div>
-            <AiDataModal isModalOpened={isModalOpened} setIsModalOpened={closeModal} />
-        </div>
+    <div className="aidata-download-button">
+        <button onClick={download}>
+            <img src={DownloadIcon} alt="NoImage"/>
+            <p>다운로드</p>
+        </button>
+    </div>
+    <div className="ai-data-title">
+        <p>{`${props.categoryName} / ${props.companyNameEng} / ${props.projectNameEng}`}</p>
+    </div>
+    <hr />
+    <div className="ai-data-info">
+        <div className="data-name"><p>ㆍ명칭: {props.detailProjectName}</p></div>
+        <div className="create-date"><p>ㆍ생성일: {`${year}년 ${month}월 ${day}일`}</p></div>
+        <div className="data-number"><p>ㆍ데이터개수: {props.fileCount}개</p></div>
+    </div>
+    <div className="ai-data-tag">
+        <p>{props.weatherType !== "None" && `#${props.weatherType} `} 
+        {props.seasonType !== "None" && `#${props.seasonType} `} 
+        {props.luminosityType !== "None" && `#${props.luminosityType} `} 
+        {props.resolutionType !== "None" && `#${props.resolutionType} `} 
+        </p>
+    </div>
+    <AiDataModal isModalOpened={isModalOpened} setIsModalOpened={closeModal} />
+</div>
+
     )
 }
 

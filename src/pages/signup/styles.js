@@ -51,7 +51,7 @@ export const InpEmail = styled.input.attrs({placeholder:"아이디(이메일)을
 
 export const CheckEmail = styled.button`
     width: 80px;
-    height: 40px;
+    height: 38px;
     display: inline-blcok;
     background-color:  rgb(245, 123, 18);
     border-width: 0px;
@@ -93,4 +93,42 @@ export const Serch = styled.img.attrs(props=>({
     right: 30px;
 `
 
+export const ButtonsWrapper = styled.div`
+    display:flex;
+    justify-content: end;
+    margin-right: 20px;
+`
 
+export const JoinButton = styled.button`
+    width: 100px;
+    height: 50px;
+    margin: 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    border-width: 0;
+    color: white;
+    background-color:  rgb(245, 123, 18);
+    transition: background 0.4s;
+    &:hover{
+        background-color:tomato;
+    }
+`
+
+export const CancelButton = styled.button`
+    width: 100px;
+    height: 50px;
+    margin: 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    border-color: rgba(0, 0, 0, 0.5);
+    color: rgba(0, 0, 0, 0.5);
+    border-width: 2;
+    background-color: white;
+    transition: background 0.4s;
+    transition: color: 0.4s;
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.7);
+        color: white;
+        border-color: rgba(0, 0, 0, 0.7);
+    }
+`

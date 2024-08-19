@@ -4,6 +4,7 @@ import { Wrapper } from "../login/Styles";
 import UserType from "./UserType";
 import LoginInfo from "./LoginInfo";
 import PersonalInfo from "./PersonalInfo";
+import Buttons from "./Buttons";
 
 //회원가입 페이지 컴포넌트
 const Signup = () => {
@@ -30,6 +31,7 @@ const Signup = () => {
                     setCompany={setCompany}
                     setDepartmant={setDepartmant}
                 />
+                <Buttons />
             </Wrapper>
         </div>
     )
