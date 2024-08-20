@@ -43,7 +43,6 @@ const FindDataSet = (props) => {  //props.num : 데이터셋 개수
             <div className="number-data">
                 <p className="number-data">데이터셋 - {data.length}건</p>
             </div>
-            {console.log(data)}
             
             {/* <h1>Fetched Data</h1>
             <pre>{JSON.stringify(data, null, 2)}</pre> */}
