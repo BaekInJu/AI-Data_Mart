@@ -98,6 +98,11 @@
     float: left;
 }
 
+.selection-wrapper {
+    height: 350px;
+    overflow: auto;
+}
+
 .options {
     display: block;
 }

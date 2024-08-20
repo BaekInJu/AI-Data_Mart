@@ -7,9 +7,8 @@ const Option = (props) => {    //props => list = 옵션 목록, handler = 선택
     const onChange = (event) => {
         props.handler(JSON.parse(`{${event.target.value}}`));    //json형식으로 넘어감
     }
-
     return(
-        <>
+        <div id>
         <div className="checkbox-lines">
             {props.list.map((item, index) => (
                 <div className="line" key={index} >
@@ -20,16 +19,16 @@ const Option = (props) => {    //props => list = 옵션 목록, handler = 선택
                         name="option" 
                         value={`"type" : "${props.for}", "value" : "${item}"`} 
                         onClick={onChange}
-                        />  
-                    
+                        /> 
                     <label htmlFor={`${props.for} : ${item}`}>
                         <span id={item} name="new-checkbox" />
                         {item}
                     </label>
+                
                 </div>
                 ))}
         </div>
-        </>
+        </div>
     )
 }
 

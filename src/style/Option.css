@@ -6,6 +6,8 @@
     align-items: center;
 }
 
+
+
 .new-checkbox::before {
     content: '';
     display: block;

@@ -16,6 +16,14 @@ import FindDataSet from "./findDataShow/FindDataSet";
 const FindAiData = () => {
   const [clicked, setClicked] = useState([]);   //체크된 속성 배열(JSON)
   
+  //체크된 항목을 통해 요청할 api 선택 알고리즘
+  //각 옵션(category, company 등)에 대한 변수 생성
+  //각 옵션 선택 컴포넌트 들에게 set함수 주기
+  //선택된 옵션을 통한 api요청을 해당 컴포넌트에서 할지 FindDataSet에서 할지??
+  //방법 1. 여기서 선택된 옵션을 토대로 요청 되어야 할 api를 번호로 FindDataSet에 넘겨준다.
+  //방법 2. 여기서 호출을 해서 나온 데이터셋 리스트를 FindDataSet에 보내준다. 
+  //방법 3. 선택된 옵션json을 그대로 FindDataSet에 넘겨주고 api선택 알고리즘을 FindDataSet에서 구현한다.    (**Best**)
+
   //체크 항목 clicked배열에 추가 함수
   const handlerOption = (click) => {  //click에는 json형식으로 넘어옴
     setClicked((prevClicked) => {
