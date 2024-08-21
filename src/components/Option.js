@@ -7,6 +7,8 @@ const Option = (props) => {    //props => list = 옵션 목록, handler = 선택
     const onChange = (event) => {
         props.handler(JSON.parse(`{${event.target.value}}`));    //json형식으로 넘어감
     }
+    const site = props.site;   //[ category, company, project]     
+
     return(
         <div id>
         <div className="checkbox-lines">

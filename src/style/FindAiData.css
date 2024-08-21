@@ -8,6 +8,10 @@
     /* display: inline; */
     float: left;
     display: block;
+    height: 148px;
+    overflow: auto;
+    width: 239px;
+
     /* width: 158px; */
     /* height: 348px; */
     /* flex-grow: 1; */
@@ -16,14 +20,17 @@
 .option-month {
     display: inline;
     float: right;
+    height: 148px;
+    overflow: auto;
+    width: 300px;
+    /* width: 239px; */
     /* width: 158px; */
-    height: 348px;
-    width: 50%;
+    /* height: 348px; 업뎃    */
     /* height: auto; */
     border: solid;
     border-width: 1px;
     border-color: rgba(197, 197, 197, 0.5);
-    overflow: auto;
+    /* overflow: auto; */
     border-bottom: 0;
 }
 
@@ -66,9 +73,9 @@
 }
 
 .selection-form {
-    display: inline-block;
-    width: 320px;
-    height: 400px;
+    /* display: inline-block; 업뎃*/
+    /* width: 320px;  업뎃*/
+    /* height: 400px;  업뎃*/
     border: solid;
     border-width: 1px;
     border-color: rgba(197, 197, 197, 0.5);
@@ -76,7 +83,7 @@
 }
 
 #date-selection-form {
-    border-left: 0;
+    /* border-left: 0; */
 }
 
 .selection-title {
@@ -98,8 +105,14 @@
     float: left;
 }
 
+/* 사이트, 생성날짜 크기 조정 */
 .selection-wrapper {
-    height: 350px;
+    height: 149px;
+    /* overflow: auto; */
+    width: 600px;
+}
+
+#site-wrapper {
     overflow: auto;
 }
 
@@ -194,4 +207,8 @@
     border-width: 1px;
     border-color: rgba(197, 197, 197, 0.2);
     margin: 0px;
+}
+
+#date-selection-form {
+    margin-top: 4px;
 }

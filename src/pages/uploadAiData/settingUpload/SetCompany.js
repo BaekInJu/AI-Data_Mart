@@ -15,9 +15,9 @@ const SetCompany = (props) => { //props.func : 선택한 옵션 부모 컴포넌
                 <span className="title">
                     <p>업체</p>
                 </span>
-                <span className="fix">
-                    {/* <img src={add} alt="NoImage"/> */}
-                </span>
+                {/* <span className="fix">
+                    <img src={add} alt="NoImage"/>
+                </span> */}
             </div>
             <OptionRadio list={company} handler={props.handler} for="company"/>
         </div>

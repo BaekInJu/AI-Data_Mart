@@ -31,14 +31,16 @@ const DateSelection = (props) => { //props.func : 옵션을 부모 컴포넌트�
                 <p>생성날짜별 보기</p>
                 <AllSelectButton for="date"/>
             </div>
-            <div className="option-list">
-                <div className="option-year">
-                    <Option list={year} handler={props.func} for="year"/>
+            {/* <div className="option-list"> */}
+                <div className="selection-wrapper" id="createdDate-wrapper">
+                    <div className="option-year">
+                        <Option list={year} handler={props.func} for="year"/>
+                    </div>
+                    <div className="option-month">
+                        <Option list={month} handler={props.func} for="month"/>    
+                    </div>
                 </div>
-                <div className="option-month">
-                    <Option list={month} handler={props.func} for="month"/>    
-                </div>
-            </div>
+            {/* </div> */}
         </div>
     )
 }
