@@ -45,8 +45,10 @@ const FindAiData = () => {
       <OrangeLine  className="orange-line" text="데이터 찾기"/>
         <div className="options">
           <div className="margin-box">
-            <SiteSelection func={handlerOption}/>
-            <DateSelection func={handlerOption}/>
+            <div className="option-left">
+              <SiteSelection func={handlerOption}/>
+              <DateSelection func={handlerOption}/>
+            </div>
             <span className="option-right">
               <span className="option-right-top">
                 <ObjectSelection func={handlerOption}/>

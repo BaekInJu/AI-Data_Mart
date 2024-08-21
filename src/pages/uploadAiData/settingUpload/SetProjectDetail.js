@@ -19,9 +19,9 @@ const SetProjectDetail = (props) => {   //props.func : 선택한 옵션 부모 �
                 <span className="title">
                     <p>세부 프로젝트</p>
                 </span>
-                <span className="fix">
-                    {/* <img src={add} alt="NoImage"/> */}
-                </span>
+                {/* <span className="fix">
+                    <img src={add} alt="NoImage"/>
+                </span> */}
             </div>
             <OptionRadio list={projectDeteil} handler={props.handler} for="projectDetail"/>
         </div>
