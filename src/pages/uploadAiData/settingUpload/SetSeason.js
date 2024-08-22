@@ -8,7 +8,8 @@ const SetSeason = (props) => { //props.func : 선택한 옵션 부모 컴포넌�
         "None",
         "Spring",
         "Summer",
-        "Fall"
+        "Fall",
+        "Winter"
       ];
     return(
         <div className="set-upload-category">

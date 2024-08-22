@@ -7,7 +7,8 @@ const SeasonSelection = (props) => {   //props.func : 옵션을 부모 컴포넌
         "None",
         "Spring",
         "Summer",
-        "Fall"
+        "Fall",
+        "Winter"
       ];
     return(
         <div className="selection-form-tiny">

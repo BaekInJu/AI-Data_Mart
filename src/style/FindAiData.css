@@ -38,11 +38,16 @@
     display: inline-block;
     width: 220px;
     height: 197px;
-    overflow: auto;
+    /* overflow: auto; 수정*/
     border: solid;
     border-width: 1px;
     border-color: rgba(197, 197, 197, 0.4);
     border-left: 0;
+}
+
+.tiny-list {
+    height: 147px;
+    overflow: auto;
 }
 
 .selection-form-tiny p {
@@ -113,7 +118,7 @@
 }
 
 #site-wrapper {
-    overflow: auto;
+    /* overflow: auto; */
 }
 
 .options {
@@ -210,5 +215,14 @@
 }
 
 #date-selection-form {
-    margin-top: 4px;
+    margin-top: 1px;
+}
+
+.selected-sites {
+    height: 96px;
+    overflow: auto;
+}
+
+.selected-site {
+    margin: 5px;
 }

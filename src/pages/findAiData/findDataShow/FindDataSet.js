@@ -16,6 +16,9 @@ const FindDataSet = (props) => {  //props.num : 데이터셋 개수
     const changePage0 = () => {  //테스트 페이징 함수0
         setPage(0)
     }
+    FindDataSet.defaultProps = {
+        site: []
+    };
     useEffect(() => { 
         // 요청을 보내는 함수 정의
         const fetchData = async () => {
@@ -34,6 +37,24 @@ const FindDataSet = (props) => {  //props.num : 데이터셋 개수
 
         fetchData(); // 컴포넌트가 마운트될 때 데이터 요청
     }, [page]);
+
+    //******************점심먹고 이부분 이어서 ******************
+    // useEffect(()=>{
+    //     console.log("나 실행");
+    //     console.log(props.site);
+    //     const fetchData = async ()=>{
+        
+    //         const response = await axios.get(
+    //             `/dataset/search?selectType=0&pageingIndex=0&pageingSize=15&orderType=DESC&categoryName=
+    //             ${props.site[0]}&companyName=${props.site[1]}&projectName=${props.site[2]}`
+    //         )
+            
+    //         console.log(response.data);
+    //         setData(response.data);
+    //     }
+    //     console.log("fetchData 실행");
+    //     fetchData();
+    // }, [props.site])
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
@@ -65,6 +86,11 @@ const FindDataSet = (props) => {  //props.num : 데이터셋 개수
             </div>
             <button onClick={changePage0}>0</button>
             <button onClick={changePage1}>1</button>
+            <button onClick={changePage1}>2</button>
+            <button onClick={changePage1}>3</button>
+            <button onClick={changePage1}>4</button>
+            <button onClick={changePage1}>5</button>
+            <button onClick={changePage1}>6</button>
         </div>
     )
 }

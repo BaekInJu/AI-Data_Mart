@@ -17,8 +17,10 @@ const OptionRadio = (props) => {     //props => list = 옵션 목록, handler = 
                         type="radio" 
                         id={`${props.for} : ${item}`} 
                         name={props.for} 
-                        value={`"type": "${props.for}", "value": "${item}"`} 
-                        onClick={onChange}
+                        
+                        value={props.type==="site"?item:`"type": "${props.for}", "value": "${item}"`} 
+                        // onClick={onChange}
+                        onClick={props.type==="site"?props.handler:onChange}
                         />  
                     
                     <label htmlFor={`${props.for} : ${item}`}>

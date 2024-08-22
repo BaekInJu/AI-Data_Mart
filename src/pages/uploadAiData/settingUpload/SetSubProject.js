@@ -14,7 +14,7 @@ const SetSubProject = (props) => { //props.func : 선택한 옵션 부모 컴포
         <div className="set-upload-category">
             <div className="set-title">
                 <span className="title">
-                    <p>서브 프로젝트</p>
+                    <p>프로젝트</p>
                 </span>
                 {/* <span className="fix">
                     <img src={add} alt="NoImage"/>
