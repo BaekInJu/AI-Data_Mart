@@ -1,9 +1,77 @@
 import React, { useEffect, useState } from "react";
-import AllSelectButton from "../../../components/AllSelectButton";
-import Option from "../../../components/Option";
 import axios from "axios";
 import SiteSelectionModal from "./SiteSelectionModal";
+import styled from "styled-components";
+import drop from "../../../assets/image/delete.png";
+import search from "../../../assets/image/search.png";
 
+const SiteList = styled.h4`
+    display: inline;
+    margin-right: 10px;
+`
+
+const Hr = styled.hr`
+    margin-bottom: 0px;
+    margin: 10px 15px 0px 15px;
+    border-width: 1px;
+    border-color: rgba(197, 197, 197, 0.3);
+`
+
+const SearchSiteWrapper = styled.div`
+    margin-top:0px;
+    position: relative;
+    top: 7px;
+`
+
+const SearchForm = styled.div`
+    display: inline-block;
+    width: 70%;
+    border-radius: 30px;
+    border: solid;
+    border-width: 1px;
+    border-color: rgba(197, 197, 197, 0.5);
+    height: 36px;
+`
+
+const SearchSiteLabel = styled.h4`
+    display: inline;
+    margin: 10px;
+    position: relative;
+    bottom: 11px;
+`
+
+const Input = styled.input.attrs({ value:""})`
+    position: relative;
+    width: 300px;
+    height: 30px;
+    border: none;
+    bottom: 13px;
+    outline: none;
+    font-size: 20px;
+`
+const SearchButton = styled.button`
+    background-color: white;
+    border:none;
+    position: relative;
+    margin: 6px;
+    bottom: 3px;
+    left: 30px;
+    padding:0
+`
+const SearchIcon = styled.img`
+    width: 30px;
+`
+
+const DeleteButton = styled.button`
+    background-color: white;
+    border: none;
+`
+
+const DeleteIcon = styled.img`
+    position: relative;
+    width: 10px;
+
+`
 //데이터 찾기 사이트 카테고리 컴포넌트
 const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트에 있는 배열에 추가해 주는 함수
     const [category, setCategory] = useState([]);   //카테고리 저장
@@ -13,6 +81,7 @@ const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트�
     const [project, setProject] = useState([]);
     const [attached, setAttached] = useState([]);
     const [modalState, setModalState] = useState(false);
+    const [requestCategory, setRequestCategory] = useState(false);
 
     const [userCategory, setUserCategory] = useState();
     const [userCompany, setUserCompany] = useState();
@@ -187,9 +256,10 @@ const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트�
             const tempCate = categoryResponse.data.map(cate =>cate.name);
             setCategory(tempCate);
         }
-
         fetchData();
-    },[]);
+        setUserCompany();
+        setUserProject();
+    },[requestCategory]);
 
     //업체 업데이트
     useEffect(()=>{
@@ -209,7 +279,12 @@ const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트�
             setProject(tempPro);
         }
         fetchData();
-    }, [userCompany])
+    }, [userCompany, userCategory])
+
+    //attached가 변경될때마다 데이터셋 업데이트
+    useEffect(()=>{
+        props.setSite(attached);
+    }, [attached])
     
 
     const siteList = [  //사이트 카테고리 옵션 배열
@@ -239,27 +314,34 @@ const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트�
     }
 
     const show = () => {
-        console.log(category);
-        console.log(cateCompa);
+        console.log("쇼");
         console.log(attached);
     }
 
     const openModal = () => {
         setModalState(true);
+        setRequestCategory(true);
     }
 
     const submit = () => {
+        const tempArr = [...attached, [userCategory, userCompany, userProject]];
         setCategory();
         setCompany();
         setProject();
-        setAttached((prev)=>{
-            return [...prev, [userCategory, userCompany, userProject]];
-        })
+        setUserCategory();
+        setUserCompany();
+        setUserProject();
+        setAttached(tempArr);
         setModalState(false);
+        setRequestCategory(false);
     }
 
-     
-    console.log(attached);
+    const deleteAttached = (index) => {
+        const arr = [...attached];
+        arr.splice(index, 1);
+        setAttached(arr);
+    }
+    
     return(
         <div className="selection-form">
             <div className="selection-title">
@@ -268,13 +350,24 @@ const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트�
             </div>
             <div className="selection-wrapper" id="site-wrapper">
                 {/* <Option list={attached} site={site} handler={props.func} for="site"/> */}
-                찾기 : <input value={`${userCategory || ' '} / ${userCompany || ' '} / ${userProject || ' '}`}/> 
-                <button onClick={openModal}>검색</button>
-                {attached && attached.map((item, index)=>(
-                    <div key={index}>
-                        <p>{item[0]} / {item[1]} / {item[2]}</p>
-                    </div>
-                ))}
+                <SearchSiteWrapper>
+                    <SearchSiteLabel>찾기</SearchSiteLabel>  
+                    <SearchForm>
+                        <Input /> 
+                        <SearchButton onClick={openModal}><SearchIcon src={search}/></SearchButton>
+                    </SearchForm>
+                </SearchSiteWrapper>
+                <Hr />
+                <div className="selected-sites">
+                    {attached.length > 0 && attached.map((item, index)=>{
+                        return(
+                            <div className="selected-site"key={index}>
+                                <SiteList>{item[0]} / {item[1]} / {item[2]}</SiteList> 
+                                <DeleteButton onClick={()=>{deleteAttached(index)}}><DeleteIcon src={drop} /></DeleteButton>
+                            </div>
+                        )
+                    })}
+                </div>
                 <SiteSelectionModal 
                 isModalOpened={modalState} 
                 setIsModalOpened={setModalState} 

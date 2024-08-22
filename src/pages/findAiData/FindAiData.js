@@ -15,6 +15,7 @@ import FindDataSet from "./findDataShow/FindDataSet";
 //데이터 찾기 페이지 구성 컴포넌트, 최상위 컴포넌트 
 const FindAiData = () => {
   const [clicked, setClicked] = useState([]);   //체크된 속성 배열(JSON)
+  const [site, setSite] = useState([]); 
   
   //체크된 항목을 통해 요청할 api 선택 알고리즘
   //각 옵션(category, company 등)에 대한 변수 생성
@@ -46,7 +47,7 @@ const FindAiData = () => {
         <div className="options">
           <div className="margin-box">
             <div className="option-left">
-              <SiteSelection func={handlerOption}/>
+              <SiteSelection func={handlerOption} setSite={setSite}/>
               <DateSelection func={handlerOption}/>
             </div>
             <span className="option-right">
@@ -69,7 +70,7 @@ const FindAiData = () => {
             <hr />
           </div>
           <div className="data-set-list">
-            <FindDataSet num={23}/>
+            <FindDataSet num={23} site={site}/>
           </div>
         </div>
     </div>
