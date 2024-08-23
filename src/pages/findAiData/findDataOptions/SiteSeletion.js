@@ -31,6 +31,7 @@ const SearchForm = styled.div`
     border-width: 1px;
     border-color: rgba(197, 197, 197, 0.5);
     height: 36px;
+    padding-top: 5px;
 `
 
 const SearchSiteLabel = styled.h4`
@@ -40,8 +41,9 @@ const SearchSiteLabel = styled.h4`
     bottom: 11px;
 `
 
-const Input = styled.input.attrs({ value:""})`
+const Input = styled.input.attrs({ value:"", placeholder:"사이트를 검색하세요"})`
     position: relative;
+    right: 18px;
     width: 300px;
     height: 30px;
     border: none;
@@ -54,7 +56,7 @@ const SearchButton = styled.button`
     border:none;
     position: relative;
     margin: 6px;
-    bottom: 3px;
+    bottom: 5px;
     left: 30px;
     padding:0
 `
@@ -72,6 +74,7 @@ const DeleteIcon = styled.img`
     width: 10px;
 
 `
+
 //데이터 찾기 사이트 카테고리 컴포넌트
 const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트에 있는 배열에 추가해 주는 함수
     const [category, setCategory] = useState([]);   //카테고리 저장
@@ -106,7 +109,6 @@ const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트�
     //             // setLoading(false);      // 로딩 상태를 false로 설정
     //         }
     //     };
-
     //     getCategory(); // 컴포넌트가 마운트될 때 데이터 요청
     // }, []);
 
@@ -117,13 +119,11 @@ const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트�
     //                 `content/company?categoryName=${item.name}`
     //             );
     //             console.log(response.data);
-
     //             setCompany((prev) => {
     //                 // 새로운 회사명들을 추출
     //                 const newCompanies = response.data
     //                     .map(compa => compa.companyNameEng)
     //                     .filter(compaName => !prev.includes(compaName)); // 기존 배열에 없는 것만 필터링
-
     //                 // 이전 배열에 새로운 회사명들을 추가
     //                 return [...prev, ...newCompanies];
     //             });
@@ -351,7 +351,7 @@ const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트�
             <div className="selection-wrapper" id="site-wrapper">
                 {/* <Option list={attached} site={site} handler={props.func} for="site"/> */}
                 <SearchSiteWrapper>
-                    <SearchSiteLabel>찾기</SearchSiteLabel>  
+                    {/* <SearchSiteLabel>찾기</SearchSiteLabel>   */}
                     <SearchForm>
                         <Input /> 
                         <SearchButton onClick={openModal}><SearchIcon src={search}/></SearchButton>
@@ -374,6 +374,9 @@ const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트�
                 category={category}
                 company={company}
                 project={project}
+                userCategory={userCategory}
+                userCompany={userCompany}
+                userProject={userProject}
                 setUserCategory={setUserCategory}
                 setUserCompany={setUserCompany}
                 setUserProject={setUserProject}

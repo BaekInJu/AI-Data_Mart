@@ -247,8 +247,8 @@
 
 
 .uploading-bar #percent {
-    position: fixed;
-    top: 500px;
+    position: relative;
+    bottom: 30px;
     left: 50px;
     color: rgba(64, 64, 64);
 }

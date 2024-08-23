@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
 import "../../../style/FindSiteModal.css";
 import OptionRadio from "../../../components/OptionRadio";
-
 
 
 const SiteSelectionModal = (props) => {
@@ -12,10 +11,11 @@ const SiteSelectionModal = (props) => {
         props.setUserProject();
         props.setIsModalOpened(false);
     }
+
     const onChange = (event) => {
         props.setUserCategory(event.target.value);    //json형식으로 넘어감
-
     }
+
     const onChangeComp = (event) => {
         props.setUserCompany(event.target.value);
     }
@@ -27,6 +27,12 @@ const SiteSelectionModal = (props) => {
         company: [],
         project: []
     };
+
+    const showSite = [
+        props.userCategory,
+        props.userCompany,
+        props.userProject
+    ].filter(site => site).join(" / ");
 
     return(
         <Modal
@@ -81,7 +87,7 @@ const SiteSelectionModal = (props) => {
                 </div>
                 <div className="inp-sub-project">
                     <span>사이트</span>
-                    <input value=""></input>
+                    <input value={showSite}></input>
                 </div>
                 <hr />
                 <div className="submit">
