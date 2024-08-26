@@ -51,6 +51,7 @@
 }
 
 .selection-form-tiny p {
+    display: inline-block;
     /* float: left; */
     color: white;
     font-weight: bolder;

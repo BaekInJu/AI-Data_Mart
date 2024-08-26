@@ -9,6 +9,7 @@ const FindDataSet = (props) => {  //props.num : 데이터셋 개수
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [page, setPage] = useState(0);   //페이지
+    const [initialRender, setInitialRender] = useState(true);
 
     const changePage1 =() => { //테스트 페이징 함수
         setPage(1)
@@ -39,22 +40,59 @@ const FindDataSet = (props) => {  //props.num : 데이터셋 개수
     }, [page]);
 
     //******************점심먹고 이부분 이어서 ******************
-    // useEffect(()=>{
-    //     console.log("나 실행");
-    //     console.log(props.site);
-    //     const fetchData = async ()=>{
-        
-    //         const response = await axios.get(
-    //             `/dataset/search?selectType=0&pageingIndex=0&pageingSize=15&orderType=DESC&categoryName=
-    //             ${props.site[0]}&companyName=${props.site[1]}&projectName=${props.site[2]}`
-    //         )
-            
-    //         console.log(response.data);
-    //         setData(response.data);
-    //     }
-    //     console.log("fetchData 실행");
-    //     fetchData();
-    // }, [props.site])
+    useEffect(()=>{
+        if (initialRender) {
+            setInitialRender(false);
+            return; // 첫 번째 렌더링 시에는 이 useEffect가 실행되지 않도록 함
+        }
+        console.log("나 실행");
+        console.log([props.categoryName,
+            props.companyName,
+            props.projectName,
+            props.dateYear,
+            props.dateMonth,
+            props.objectType,
+            props.luminosityType,
+            props.weatherType,
+            props.seasonType,
+            props.resolutionType,
+            props.locationType]);
+        const fetchData = async ()=>{
+            const response = await axios.get(
+                `/dataset/search?selectType=0&pageingIndex=0&pageingSize=15&orderType=DESC&`+
+                `categoryName=${props.categoryName.length === 0 ? "none" : props.categoryName}&`+
+                `companyName=${props.companyName.length === 0 ? "none" : props.companyName}&`+
+                `projectName=${props.projectName.length === 0 ? "none" : props.projectName}&`+
+                `dateYear=${props.dateYear.length === 0 ? "none" : props.dateYear}&`+
+                `dateMonth=${props.dateMonth.length === 0 ? "none" : props.dateMonth}&`+
+                `objectType=${props.objectType.length === 0 ? "none" : props.objectType}&`+
+                `luminosityType=${props.luminosityType.length === 0 ? "none" : props.luminosityType}&`+
+                `weatherType=${props.weatherType.length === 0 ? "none" : props.weatherType}&`+
+                `seasonType=${props.seasonType.length === 0 ? "none" : props.seasonType}&`+
+                `resolutionType=${props.resolutionType.length === 0 ? "none" : props.resolutionType}&`+
+                `locationType=${props.locationType.length === 0 ? "none" : props.locationType}`
+                
+            )
+            if(response.data.length === 0){
+                setData((await axios.get("dataset/search/all?pageingIndex=0&pageingSize=15&orderType=ASC")).data);
+                return;
+            }
+            console.log(response.data);
+            setData(response.data);
+        }
+        console.log("fetchData 실행");
+        fetchData();
+    }, [props.categoryName,
+        props.companyName,
+        props.projectName,
+        props.dateYear,
+        props.dateMonth,
+        props.objectType,
+        props.luminosityType,
+        props.weatherType,
+        props.seasonType,
+        props.resolutionType,
+        props.locationType])
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
@@ -83,7 +121,8 @@ const FindDataSet = (props) => {  //props.num : 데이터셋 개수
                     resolutionType={item.resolutionType}
                 />;
             })}
-            </div>
+            </div> 
+            {/* 원래는 api로부터 전체 데이터 갯수를 받아서 데이터/15를 해서 나온 페이지 만큼 페이지 수를 만들어야 함 */}
             <button onClick={changePage0}>0</button>
             <button onClick={changePage1}>1</button>
             <button onClick={changePage1}>2</button>

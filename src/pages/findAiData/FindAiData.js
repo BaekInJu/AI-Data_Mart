@@ -17,6 +17,19 @@ const FindAiData = () => {
   const [clicked, setClicked] = useState([]);   //체크된 속성 배열(JSON)
   const [site, setSite] = useState([]); 
   
+  //api 요청할 파라미터 변수
+  const [categoryName, setCategoryName] = useState([]);
+  const [companyName, setCompanyName] = useState([]);
+  const [projectName, setProjectName] = useState([]);
+  const [dateYear, setDateYear] = useState([]);
+  const [dateMonth, setDateMonth] = useState([]);
+  const [objectType, setObjectType] = useState([]);
+  const [luminosityType, setLuminosityType] = useState([]);
+  const [weatherType, setWeatherType] = useState([]);
+  const [seasonType, setSeasonType] = useState([]);
+  const [resolutionType, setResolutionType] = useState([]);
+  const [locationType, setLocationType] = useState([]);
+  
   //체크된 항목을 통해 요청할 api 선택 알고리즘
   //각 옵션(category, company 등)에 대한 변수 생성
   //각 옵션 선택 컴포넌트 들에게 set함수 주기
@@ -47,19 +60,40 @@ const FindAiData = () => {
         <div className="options">
           <div className="margin-box">
             <div className="option-left">
-              <SiteSelection func={handlerOption} setSite={setSite}/>
-              <DateSelection func={handlerOption}/>
+              <SiteSelection 
+              func={handlerOption} 
+              setSite={setSite}
+              setCategoryName={setCategoryName}
+              setCompanyName={setCompanyName}
+              setProjectName={setProjectName}
+              />
+              <DateSelection func={handlerOption}
+              setDateYear={setDateYear}
+              setDateMonth={setDateMonth}
+              />
             </div>
             <span className="option-right">
               <span className="option-right-top">
-                <ObjectSelection func={handlerOption}/>
-                <AttributeSelection func={handlerOption}/>
-                <WeatherSeletion func={handlerOption}/>
+                <ObjectSelection func={handlerOption}
+                setObjectType={setObjectType}
+                />
+                <AttributeSelection func={handlerOption}
+                setLocationType={setLocationType}
+                />
+                <WeatherSeletion func={handlerOption}
+                setWeatherType={setWeatherType}
+                />
               </span>
               <span className="option-right-bottom">
-                <BrightSelection func={handlerOption}/>
-                <SeasonSelection func={handlerOption}/>
-                <ResolutionSelection func={handlerOption}/>
+                <BrightSelection func={handlerOption}
+                setLuminosityType={setLuminosityType}
+                />
+                <SeasonSelection func={handlerOption}
+                setSeasonType={setSeasonType}
+                />
+                <ResolutionSelection func={handlerOption}
+                setResolutionType={setResolutionType}
+                />
               </span>
             </span>
           </div>
@@ -70,7 +104,21 @@ const FindAiData = () => {
             <hr />
           </div>
           <div className="data-set-list">
-            <FindDataSet num={23} site={site}/>
+            <FindDataSet 
+            site={site}
+            categoryName={categoryName}
+            companyName={companyName}
+            projectName={projectName}
+            dateYear={dateYear}
+            dateMonth={dateMonth}
+            objectType={objectType}
+            luminosityType={luminosityType}
+            weatherType={weatherType}
+            seasonType={seasonType}
+            resolutionType={resolutionType}
+            locationType={locationType}
+
+            />
           </div>
         </div>
     </div>

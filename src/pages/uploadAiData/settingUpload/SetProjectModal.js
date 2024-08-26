@@ -22,7 +22,7 @@ const SetProjectModal = (props) => {
         subProject: "",
         projectDetail: ""
     });
-    
+
     const projectHandler = (e) => {  //카테고리가 선택될때마다 실행되는 핸들러
         setShowProjectDetail((prev) => ({
             ...prev,
