@@ -249,7 +249,7 @@ const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트�
     // }, []); // 모든 데이터를 한 번에 가져옵니다.
 
     //모달로 사이트 정의하기 알고리즘
-    //카테고리 업뎅이트
+    //카테고리 업데이트
     useEffect(()=>{
         const fetchData = async () => {
             const categoryResponse = await axios.get("content/category/all");
@@ -325,6 +325,9 @@ const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트�
 
     const submit = () => {
         const tempArr = [...attached, [userCategory, userCompany, userProject]];
+        props.setCategoryName(prev=>[...prev,userCategory]);
+        props.setCompanyName(prev=>[...prev,userCompany]);
+        props.setProjectName(prev=>[...prev,userProject]);
         setCategory();
         setCompany();
         setProject();
@@ -340,6 +343,19 @@ const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트�
         const arr = [...attached];
         arr.splice(index, 1);
         setAttached(arr);
+
+        const tempCate = [];
+        const tempComp = [];
+        const tempPro = [];
+        for(let i = 0; i < arr.length; i++){
+            tempCate.push(arr[i][0]);
+            tempComp.push(arr[i][1]);
+            tempPro.push(arr[i][2]);
+            
+        }
+            props.setCategoryName(tempCate);
+            props.setCompanyName(tempComp);
+            props.setProjectName(tempPro);
     }
     
     return(
