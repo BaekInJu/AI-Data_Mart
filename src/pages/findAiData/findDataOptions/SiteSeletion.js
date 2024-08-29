@@ -287,17 +287,6 @@ const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트�
     }, [attached])
     
 
-    const siteList = [  //사이트 카테고리 옵션 배열
-        "HDS / AJIN / 지게차",
-        "HDS / AJIN / NE",
-        "HDS / AJIN / AD",
-        "HDS / HOWON / NE",
-        "HDS / HOWON / AD",
-        "HDS / HOWON / HI",
-        "MOD / BRIGADE / #001",
-        "MOD / VRIGADE / #002"
-      ];
-
       const handler = () => {    //All버튼 핸들러 함수
         let test = document.getElementById("site : HDS / AJIN / 지게차");
         let test1 = document.getElementById("site");
@@ -324,10 +313,21 @@ const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트�
     }
 
     const submit = () => {
+        if(userCategory === undefined &&
+            userCompany === undefined &&
+            userProject === undefined
+        ) {
+            setModalState(false);
+            setRequestCategory(false);
+            return;
+        }
         const tempArr = [...attached, [userCategory, userCompany, userProject]];
-        props.setCategoryName(prev=>[...prev,userCategory]);
-        props.setCompanyName(prev=>[...prev,userCompany]);
-        props.setProjectName(prev=>[...prev,userProject]);
+        console.log(userCategory);
+        console.log(userCompany);
+        console.log(userProject);
+        {userCategory && props.setCategoryName(prev=>[...prev,userCategory])};
+        {userCompany && props.setCompanyName(prev=>[...prev,userCompany])};
+        {userProject && props.setProjectName(prev=>[...prev,userProject])};
         setCategory();
         setCompany();
         setProject();
@@ -347,15 +347,16 @@ const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트�
         const tempCate = [];
         const tempComp = [];
         const tempPro = [];
+        
         for(let i = 0; i < arr.length; i++){
-            tempCate.push(arr[i][0]);
-            tempComp.push(arr[i][1]);
-            tempPro.push(arr[i][2]);
-            
+            {arr[i][0] && tempCate.push(arr[i][0])};
+            {arr[i][1] && tempComp.push(arr[i][1])};
+            {arr[i][2] && tempPro.push(arr[i][2])};
         }
-            props.setCategoryName(tempCate);
-            props.setCompanyName(tempComp);
-            props.setProjectName(tempPro);
+        
+        {props.setCategoryName(tempCate)};
+        {props.setCompanyName(tempComp)};
+        {props.setProjectName(tempPro)};
     }
     
     return(
@@ -378,7 +379,7 @@ const SiteSelection = (props) => { //props.func : 옵션을 부모 컴포넌트�
                     {attached.length > 0 && attached.map((item, index)=>{
                         return(
                             <div className="selected-site"key={index}>
-                                <SiteList>{item[0]} / {item[1]} / {item[2]}</SiteList> 
+                                <SiteList>{item[0]} {item[1] ? `/ ${item[1]}` : ""} {item[2] ? `/ ${item[2]}` : ""}</SiteList> 
                                 <DeleteButton onClick={()=>{deleteAttached(index)}}><DeleteIcon src={drop} /></DeleteButton>
                             </div>
                         )

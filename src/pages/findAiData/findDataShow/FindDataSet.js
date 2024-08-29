@@ -20,12 +20,14 @@ const FindDataSet = (props) => {  //props.num : 데이터셋 개수
     FindDataSet.defaultProps = {
         site: []
     };
-    useEffect(() => { 
+    useEffect(() => {
+        if(!initialRender)
+            return; 
         // 요청을 보내는 함수 정의
         const fetchData = async () => {
             try {
                 const response = await axios.get(
-                    `/dataset/search/all?pageingIndex=${page}&pageingSize=16&orderType=ASC`
+                    `/dataset/search/all?pageingIndex=${page}&pageingSize=16&orderType=DESC`
                 );
                 setData(response.data);  // 서버에서 받은 데이터 저장
                 setLoading(false);       // 로딩 상태를 false로 설정
@@ -39,48 +41,35 @@ const FindDataSet = (props) => {  //props.num : 데이터셋 개수
         fetchData(); // 컴포넌트가 마운트될 때 데이터 요청
     }, [page]);
 
-    //******************점심먹고 이부분 이어서 ******************
     useEffect(()=>{
         if (initialRender) {
             setInitialRender(false);
             return; // 첫 번째 렌더링 시에는 이 useEffect가 실행되지 않도록 함
         }
-        console.log("나 실행");
-        console.log([props.categoryName,
-            props.companyName,
-            props.projectName,
-            props.dateYear,
-            props.dateMonth,
-            props.objectType,
-            props.luminosityType,
-            props.weatherType,
-            props.seasonType,
-            props.resolutionType,
-            props.locationType]);
         const fetchData = async ()=>{
+            // console.log(props.categoryName);
+            // console.log(props.companyName);
+            // console.log(props.projectName);
             const response = await axios.get(
-                `/dataset/search?selectType=0&pageingIndex=0&pageingSize=15&orderType=DESC&`+
-                `categoryName=${props.categoryName.length === 0 ? "none" : props.categoryName}&`+
-                `companyName=${props.companyName.length === 0 ? "none" : props.companyName}&`+
-                `projectName=${props.projectName.length === 0 ? "none" : props.projectName}&`+
-                `dateYear=${props.dateYear.length === 0 ? "none" : props.dateYear}&`+
-                `dateMonth=${props.dateMonth.length === 0 ? "none" : props.dateMonth}&`+
-                `objectType=${props.objectType.length === 0 ? "none" : props.objectType}&`+
-                `luminosityType=${props.luminosityType.length === 0 ? "none" : props.luminosityType}&`+
-                `weatherType=${props.weatherType.length === 0 ? "none" : props.weatherType}&`+
-                `seasonType=${props.seasonType.length === 0 ? "none" : props.seasonType}&`+
-                `resolutionType=${props.resolutionType.length === 0 ? "none" : props.resolutionType}&`+
-                `locationType=${props.locationType.length === 0 ? "none" : props.locationType}`
-                
+                `/dataset/search?pageingIndex=${page}&pageingSize=16&orderType=DESC&`+
+                `${props.categoryName.length === 0 ? "" : "categoryName=" + props.categoryName+"&"}`+
+                `${props.companyName.length === 0 ? "" : "companyName="+props.companyName+"&"}`+
+                `${props.projectName.length === 0 ? "" : "projectName="+props.projectName+"&"}`+
+                `${props.dateYear.length === 0 ? "" : "dateYear="+props.dateYear+"&"}`+
+                `${props.dateMonth.length === 0 ? "" : "dateMonth="+props.dateMonth+"&"}`+
+                `${props.objectType.length === 0 ? "" : "objectType="+props.objectType+"&"}`+
+                `${props.luminosityType.length === 0 ? "" :"luminosityType="+ props.luminosityType+"&"}`+
+                `${props.weatherType.length === 0 ? "" : "weatherType="+props.weatherType+"&"}`+
+                `${props.seasonType.length === 0 ? "" : "seasonType="+props.seasonType+"&"}`+
+                `${props.resolutionType.length === 0 ? "" : "resolutionType="+props.resolutionType+"&"}`+
+                `${props.locationType.length === 0 ? "" : "locationType="+props.locationType}`
             )
+
             if(response.data.length === 0){
-                setData((await axios.get("dataset/search/all?pageingIndex=0&pageingSize=15&orderType=ASC")).data);
                 return;
             }
-            console.log(response.data);
             setData(response.data);
         }
-        console.log("fetchData 실행");
         fetchData();
     }, [props.categoryName,
         props.companyName,
@@ -92,7 +81,8 @@ const FindDataSet = (props) => {  //props.num : 데이터셋 개수
         props.weatherType,
         props.seasonType,
         props.resolutionType,
-        props.locationType])
+        props.locationType,
+        page])
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
@@ -115,10 +105,12 @@ const FindDataSet = (props) => {  //props.num : 데이터셋 개수
                     detailProjectName={item.detailProjectName}
                     recordDate={item.recordDate}
                     fileCount={item.fileCount}
+                    objectType={item.objectType}
                     weatherType={item.weatherType}
                     seasonType={item.seasonType}
                     luminosityType={item.luminosityType}
                     resolutionType={item.resolutionType}
+                    locationType={item.locationType}
                 />;
             })}
             </div> 

@@ -30,7 +30,7 @@ const AttributeSelection = (props) => { //props.func : 옵션을 부모 컴포�
     return(
         <div className="selection-form-tiny">
             <div className="selection-title">
-                <p>속성별 보기</p>
+                <p>장소별 보기</p>
                 <AllSelectButton for="location" click={allBtn}/>
             </div>
             <div className="option-list">

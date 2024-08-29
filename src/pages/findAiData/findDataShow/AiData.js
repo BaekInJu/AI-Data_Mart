@@ -53,11 +53,13 @@ const AiData = (props) => {
         {props.seasonType !== "None" && `#${props.seasonType} `} 
         {props.luminosityType !== "None" && `#${props.luminosityType} `} 
         {props.resolutionType !== "None" && `#${props.resolutionType} `} 
+        {props.locationType !== "None" && `#${props.locationType}`}
+        {props.objectType !== "none" && `#${props.objectType}`}   
+        {/* 객체 데이터만 none의 첫글자가 소문자임 */}
         </p>
     </div>
     <AiDataModal isModalOpened={isModalOpened} setIsModalOpened={closeModal} />
 </div>
-
     )
 }
 
