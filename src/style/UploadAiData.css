@@ -151,7 +151,7 @@
 
 .uploading-bar p {
     position: relative;
-    bottom: 9px;
+    bottom: 12px;
     right: 15px;
     font-size: 20px;
     margin-right: 20px;
@@ -181,6 +181,8 @@
 }
 
 .uploading-bar .frame {
+    position: relative;
+    top: 19px;
     display: inline-block;
     height: 30px;
     width: 1100px;
